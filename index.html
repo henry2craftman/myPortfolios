@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신태욱 Henry — Creative Technologist</title>
+  <meta name="description" content="Creative Technologist - 최신 기술을 산업 현장에 직접 적용하고, 그 경험을 전달합니다.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Dot Pattern Background -->
+  <div class="dot-bg" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo pixel-text">TAEUK.SHIN</a>
+      <div class="nav-links">
+        <a href="#about" data-ko="소개" data-en="About">소개</a>
+        <a href="#skills" data-ko="기술" data-en="Skills">기술</a>
+        <a href="#experience" data-ko="경력" data-en="Career">경력</a>
+        <a href="#projects" data-ko="프로젝트" data-en="Projects">프로젝트</a>
+        <a href="#education" data-ko="학력" data-en="Education">학력</a>
+        <a href="#contact" data-ko="연락처" data-en="Contact">연락처</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-lang" id="langToggle" aria-label="Toggle Language">
+          <span class="pixel-text">EN</span>
+        </button>
+        <button class="btn-download" id="downloadPdf" aria-label="Download PDF">
+          <span class="pixel-icon">↓</span>
+          <span data-ko="PDF" data-en="PDF">PDF</span>
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="#about" data-ko="소개" data-en="About">소개</a>
+      <a href="#skills" data-ko="기술" data-en="Skills">기술</a>
+      <a href="#experience" data-ko="경력" data-en="Career">경력</a>
+      <a href="#projects" data-ko="프로젝트" data-en="Projects">프로젝트</a>
+      <a href="#education" data-ko="학력" data-en="Education">학력</a>
+      <a href="#contact" data-ko="연락처" data-en="Contact">연락처</a>
+      <div class="nav-mobile-actions">
+        <button class="btn-lang" id="langToggleMobile" aria-label="Toggle Language">
+          <span class="pixel-text">EN</span>
+        </button>
+        <button class="btn-download" id="downloadPdfMobile" aria-label="Download PDF">
+          <span class="pixel-icon">↓</span> PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content (PDF target) -->
+  <main id="portfolio-content">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge pixel-text">CREATIVE TECHNOLOGIST</div>
+          <h1 class="hero-name">
+            <span class="hero-name-kr">신태욱</span>
+            <span class="hero-name-en">     Henry</span>
+          </h1>
+          <p class="hero-tagline" data-ko="최신 기술을 산업 현장에 직접 적용하고, 그 경험을 전달합니다." data-en="I apply cutting-edge technology directly to industry, and share that experience.">
+            최신 기술을 산업 현장에 직접 적용하고, 그 경험을 전달합니다.
+          </p>
+          <div class="hero-pixels" aria-hidden="true">
+            <span class="pixel-dot" style="--delay:0"></span>
+            <span class="pixel-dot" style="--delay:1"></span>
+            <span class="pixel-dot" style="--delay:2"></span>
+            <span class="pixel-dot" style="--delay:3"></span>
+            <span class="pixel-dot" style="--delay:4"></span>
+          </div>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary" data-ko="연락하기" data-en="Get in Touch">연락하기</a>
+            <a href="#experience" class="btn btn-outline" data-ko="경력 보기" data-en="View Career">경력 보기</a>
+          </div>
+        </div>
+        <canvas class="hero-canvas" id="pixelCanvas" aria-hidden="true"></canvas>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="소개" data-en="About">소개</span>
+        </h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <p class="about-text" data-ko="Naver LABs, 국방과학연구소(ADD)와 AI 합성 데이터 파이프라인을 구축했고, KOCCA·유니티 코리아와 함께한 교육에서는 취업률 85%, 강의 평점 4.6을 기록했습니다." data-en="Built AI synthetic data pipelines with Naver LABs and ADD (Agency for Defense Development). Achieved 85% employment rate and 4.6 course rating in training programs with KOCCA and Unity Korea.">
+              Naver LABs, 국방과학연구소(ADD)와 AI 합성 데이터 파이프라인을 구축했고, KOCCA·유니티 코리아와 함께한 교육에서는 취업률 85%, 강의 평점 4.6을 기록했습니다.
+            </p>
+          </div>
+          <div class="about-card">
+            <p class="about-text" data-ko="최근에는 생성형 AI(Claude, ChatGPT, Gemini)를 개발 교육에 도입해 단순 코딩을 넘어 문제 해결 중심의 커리큘럼을 운영하고 있습니다." data-en="Recently introduced generative AI (Claude, ChatGPT, Gemini) into development education, operating problem-solving-focused curricula beyond simple coding.">
+              최근에는 생성형 AI(Claude, ChatGPT, Gemini)를 개발 교육에 도입해 단순 코딩을 넘어 문제 해결 중심의 커리큘럼을 운영하고 있습니다.
+            </p>
+          </div>
+          <div class="about-card about-highlight">
+            <p class="about-quote" data-ko="기술과 사람 사이에서 언어를 통역하는 것, 그게 제 강점입니다." data-en="Translating between technology and people — that's my strength.">
+              "기술과 사람 사이에서 언어를 통역하는 것, 그게 제 강점입니다."
+            </p>
+          </div>
+          <div class="about-card">
+            <p class="about-text" data-ko="LLM 기반 AI 에이전트 오케스트레이션과 MCP(Model Context Protocol)를 활용한 워크플로우 자동화에도 관심을 두고 있습니다. 단순 자동화를 넘어 AI가 실제 산업 시스템과 연결되는 흐름이 앞으로의 핵심이라고 생각합니다." data-en="Also exploring LLM-based AI agent orchestration and MCP (Model Context Protocol) workflow automation. I believe the key future lies in connecting AI with real industrial systems beyond simple automation.">
+              LLM 기반 AI 에이전트 오케스트레이션과 MCP(Model Context Protocol)를 활용한 워크플로우 자동화에도 관심을 두고 있습니다. 단순 자동화를 넘어 AI가 실제 산업 시스템과 연결되는 흐름이 앞으로의 핵심이라고 생각합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Personal -->
+        <div class="about-personal">
+          <h3 class="subsection-title pixel-text">
+            <span data-ko="// 사이드 프로젝트 & 취미" data-en="// SIDE PROJECT & HOBBIES">// 사이드 프로젝트 & 취미</span>
+          </h3>
+          <p class="about-text" data-ko="Unity ML-Agents 기반 강화학습으로 UR16e 파지 학습과 2족 보행 로봇을 연구 중입니다. 설계부터 3D 프린팅으로 직접 몸체를 제작하며 시뮬레이션과 현실을 오가는 작업이 요즘 가장 즐거운 취미예요." data-en="Researching UR16e grasping and bipedal walking robots using reinforcement learning with Unity ML-Agents. From design to 3D printing the body myself — bridging simulation and reality is my favorite hobby these days.">
+            Unity ML-Agents 기반 강화학습으로 UR16e 파지 학습과 2족 보행 로봇을 연구 중입니다. 설계부터 3D 프린팅으로 직접 몸체를 제작하며 시뮬레이션과 현실을 오가는 작업이 요즘 가장 즐거운 취미예요.
+          </p>
+          <div class="about-hobbies">
+            <span class="hobby-tag" data-ko="3D 프린팅" data-en="3D Printing">3D 프린팅</span>
+            <span class="hobby-tag" data-ko="스케이트보드" data-en="Skateboarding">스케이트보드</span>
+            <span class="hobby-tag" data-ko="로봇 제작" data-en="Robot Building">로봇 제작</span>
+            <span class="hobby-tag" data-ko="강화학습 연구" data-en="RL Research">강화학습 연구</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="기술 스택" data-en="Tech Stack">기술 스택</span>
+        </h2>
+        <div class="skills-grid">
+          <!-- Innovation & R&D -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon pixel-text">01</span>
+              <h3 data-ko="Innovation & R&D" data-en="Innovation & R&D">Innovation & R&D</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">Unity3D (HDRP)</span>
+              <span class="tag">NVIDIA Omniverse</span>
+              <span class="tag">WebGL</span>
+              <span class="tag">Synthetic Data</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">LiDAR</span>
+              <span class="tag">AR/VR</span>
+            </div>
+          </div>
+
+          <!-- Education & Leadership -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon pixel-text">02</span>
+              <h3 data-ko="Education & Leadership" data-en="Education & Leadership">Education & Leadership</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag" data-ko="산업용 디지털 트윈" data-en="Industrial Digital Twin">산업용 디지털 트윈</span>
+              <span class="tag" data-ko="게임 개발" data-en="Game Development">게임 개발</span>
+              <span class="tag" data-ko="Full-Stack 커리큘럼" data-en="Full-Stack Curriculum">Full-Stack 커리큘럼</span>
+              <span class="tag" data-ko="9인 R&D 팀 리딩" data-en="9-Person R&D Team Lead">9인 R&D 팀 리딩</span>
+              <span class="tag" data-ko="애자일 프로젝트 총괄" data-en="Agile Project Management">애자일 프로젝트 총괄</span>
+            </div>
+          </div>
+
+          <!-- Software Design -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon pixel-text">03</span>
+              <h3 data-ko="Software Design & Collaboration" data-en="Software Design & Collaboration">Software Design & Collaboration</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag" data-ko="UI/UX 기반 GUI" data-en="UI/UX-Based GUI">UI/UX 기반 GUI</span>
+              <span class="tag">UML</span>
+              <span class="tag">Slack</span>
+              <span class="tag">GitHub Projects</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+
+          <!-- Core Tech Stack -->
+          <div class="skill-card skill-card-core">
+            <div class="skill-header">
+              <span class="skill-icon pixel-text">04</span>
+              <h3 data-ko="Core Tech Stack" data-en="Core Tech Stack">Core Tech Stack</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="tag tag-core">C#</span>
+              <span class="tag tag-core">Python</span>
+              <span class="tag tag-core">C++</span>
+              <span class="tag tag-core">Unity3D</span>
+              <span class="tag">PLC (MELSEC)</span>
+              <span class="tag">Universal Robots</span>
+              <span class="tag">TCP/IP</span>
+              <span class="tag">MQTT</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="경력" data-en="Career">경력</span>
+        </h2>
+        <div class="timeline">
+
+          <!-- CodeLab Academy -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2023.07 — Present</span>
+                  <span class="timeline-type pixel-text" data-ko="프리랜서" data-en="Freelance">프리랜서</span>
+                </div>
+                <h3 class="timeline-company">CodeLab Academy</h3>
+                <p class="timeline-role" data-ko="디지털 트윈 전문가 & K-Digital 인스트럭터" data-en="Digital Twin Expert & K-Digital Instructor">디지털 트윈 전문가 & K-Digital 인스트럭터</p>
+                <p class="timeline-location" data-ko="서울 · 하이브리드 근무" data-en="Seoul · Hybrid">서울 · 하이브리드 근무</p>
+              </div>
+              <div class="timeline-body">
+                <p class="timeline-summary" data-ko="산업 현장에 즉시 투입 가능한 실무형 디지털 트윈 전문가 양성을 목표로, 고도화된 기술 교육 커리큘럼을 설계하고 총괄했습니다." data-en="Designed and managed advanced technical training curricula to develop industry-ready digital twin specialists.">
+                  산업 현장에 즉시 투입 가능한 실무형 디지털 트윈 전문가 양성을 목표로, 고도화된 기술 교육 커리큘럼을 설계하고 총괄했습니다.
+                </p>
+                <div class="timeline-stats">
+                  <div class="stat">
+                    <span class="stat-value">85%</span>
+                    <span class="stat-label" data-ko="취업률" data-en="Employment">취업률</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat-value">4.6</span>
+                    <span class="stat-label" data-ko="강의 평점" data-en="Rating">강의 평점</span>
+                  </div>
+                </div>
+                <ul class="timeline-details">
+                  <li data-ko="Mitsubishi PLC와 Unity 가상 공장을 TCP/IP, MQTT로 실시간 연동하는 커리큘럼 설계 및 총괄" data-en="Designed curriculum connecting Mitsubishi PLC with Unity virtual factories via TCP/IP and MQTT in real-time">Mitsubishi PLC와 Unity 가상 공장을 TCP/IP, MQTT로 실시간 연동하는 커리큘럼 설계 및 총괄</li>
+                  <li data-ko="UR 로봇 IK(역기구학) 기반 티칭 시스템 구현, PLC 및 Firebase 실시간 연동 심화 프로젝트 도입" data-en="Implemented UR robot IK-based teaching system with real-time PLC and Firebase integration">UR 로봇 IK(역기구학) 기반 티칭 시스템 구현, PLC 및 Firebase 실시간 연동 심화 프로젝트 도입</li>
+                  <li data-ko="KOCCA, 유니티 코리아와 파트너십으로 K-Digital Training 프로그램 진행" data-en="Partnered with KOCCA and Unity Korea for K-Digital Training programs">KOCCA, 유니티 코리아와 파트너십으로 K-Digital Training 프로그램 진행</li>
+                  <li data-ko="2D/3D, AR/VR, 네트워크, OOP, 자료구조, 알고리즘, Git, DB 등 종합 개발 교육" data-en="Comprehensive training: 2D/3D, AR/VR, networking, OOP, data structures, algorithms, Git, DB">2D/3D, AR/VR, 네트워크, OOP, 자료구조, 알고리즘, Git, DB 등 종합 개발 교육</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Xiilab -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2021.12 — 2023.07</span>
+                  <span class="timeline-duration pixel-text" data-ko="1년 8개월" data-en="1yr 8mo">1년 8개월</span>
+                </div>
+                <h3 class="timeline-company" data-ko="씨이랩 (Xiilab)" data-en="Xiilab">씨이랩 (Xiilab)</h3>
+                <p class="timeline-role" data-ko="리드 소프트웨어 엔지니어, AI & 디지털 트윈" data-en="Lead Software Engineer, AI & Digital Twin">리드 소프트웨어 엔지니어, AI & 디지털 트윈</p>
+                <p class="timeline-location" data-ko="서울 · 대면근무" data-en="Seoul · On-site">서울 · 대면근무</p>
+              </div>
+              <div class="timeline-body">
+                <p class="timeline-summary" data-ko="AI/ML 애플리케이션을 위한 합성 데이터 플랫폼 및 디지털 트윈 솔루션 개발 팀을 이끌었습니다." data-en="Led a multidisciplinary team developing synthetic data platforms and digital twin solutions for AI/ML applications.">
+                  AI/ML 애플리케이션을 위한 합성 데이터 플랫폼 및 디지털 트윈 솔루션 개발 팀을 이끌었습니다.
+                </p>
+                <ul class="timeline-details">
+                  <li data-ko="Naver LABs, 국방과학연구소(ADD)와 협력하여 AI 합성 데이터 생성 파이프라인 설계 및 주도" data-en="Collaborated with Naver LABs and ADD to design and lead AI synthetic data generation pipelines">Naver LABs, 국방과학연구소(ADD)와 협력하여 AI 합성 데이터 생성 파이프라인 설계 및 주도</li>
+                  <li data-ko="Unity HDRP 커스텀 셰이더로 가상 LiDAR·적외선(IR) 다중 센서 시뮬레이션 구현" data-en="Implemented multi-sensor simulation (virtual LiDAR, IR) using Unity HDRP custom shaders">Unity HDRP 커스텀 셰이더로 가상 LiDAR·적외선(IR) 다중 센서 시뮬레이션 구현</li>
+                  <li data-ko="OpenCV 멀티스레드 아키텍처 도입으로 데이터 처리량 30%+ 최적화" data-en="Optimized data throughput by 30%+ with OpenCV multithreaded architecture">OpenCV 멀티스레드 아키텍처 도입으로 데이터 처리량 30%+ 최적화</li>
+                  <li data-ko="9명 팀(개발 6, 아트 3) 리딩 — 로드맵, 기술 아키텍처, Git 기반 애자일 워크플로우 총괄" data-en="Led 9-person team (6 dev, 3 art) — managed roadmap, tech architecture, Git-based agile workflows">9명 팀(개발 6, 아트 3) 리딩 — 로드맵, 기술 아키텍처, Git 기반 애자일 워크플로우 총괄</li>
+                  <li data-ko="NVIDIA PLM Conference 2023 연사 — 'Omniverse 기반 개방형 디지털 트윈 전략' 발표" data-en="Speaker at NVIDIA PLM Conference 2023 — 'Open Digital Twin Strategy with Omniverse'">NVIDIA PLM Conference 2023 연사 — 'Omniverse 기반 개방형 디지털 트윈 전략' 발표</li>
+                  <li data-ko="CCTV 실시간 WebGL 시각화 시스템 개발 (FSM, 오브젝트 풀링 최적화)" data-en="Developed real-time CCTV WebGL visualization system (FSM, object pooling optimization)">CCTV 실시간 WebGL 시각화 시스템 개발 (FSM, 오브젝트 풀링 최적화)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- VVR -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2021.04 — 2021.11</span>
+                  <span class="timeline-duration pixel-text" data-ko="8개월" data-en="8mo">8개월</span>
+                </div>
+                <h3 class="timeline-company">VVR</h3>
+                <p class="timeline-role" data-ko="XR 개발자, 팀 리드" data-en="XR Developer, Team Lead">XR 개발자, 팀 리드</p>
+                <p class="timeline-location" data-ko="서울" data-en="Seoul">서울</p>
+              </div>
+              <div class="timeline-body">
+                <p class="timeline-summary" data-ko="몰입형 XR 교육용 게임 개발을 주도했습니다." data-en="Led the development of immersive XR educational games.">
+                  몰입형 XR 교육용 게임 개발을 주도했습니다.
+                </p>
+                <ul class="timeline-details">
+                  <li data-ko="Kinect, LiDAR 3D 뎁스 센서 활용 XR 교육용 게임 엔드-투-엔드 개발" data-en="End-to-end XR educational game development with Kinect and LiDAR 3D depth sensors">Kinect, LiDAR 3D 뎁스 센서 활용 XR 교육용 게임 엔드-투-엔드 개발</li>
+                  <li data-ko="Unity CDN·에셋 번들 기반 자동 업데이트 시스템 구축" data-en="Built auto-update system using Unity CDN and asset bundles">Unity CDN·에셋 번들 기반 자동 업데이트 시스템 구축</li>
+                  <li data-ko="4인 팀(개발 3, 디자인 1) 관리 — 기획부터 배포까지 전체 라이프사이클 감독" data-en="Managed 4-person team (3 dev, 1 design) — full lifecycle from concept to deployment">4인 팀(개발 3, 디자인 1) 관리 — 기획부터 배포까지 전체 라이프사이클 감독</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Keeworks -->
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-meta">
+                  <span class="timeline-date">2019.06 — 2020.08</span>
+                  <span class="timeline-duration pixel-text" data-ko="1년 3개월" data-en="1yr 3mo">1년 3개월</span>
+                </div>
+                <h3 class="timeline-company">Keeworks, Inc</h3>
+                <p class="timeline-role" data-ko="이미지 프로세싱 엔지니어" data-en="Image Processing Engineer">이미지 프로세싱 엔지니어</p>
+                <p class="timeline-location" data-ko="경기도 광명시" data-en="Gwangmyeong, Gyeonggi">경기도 광명시</p>
+              </div>
+              <div class="timeline-body">
+                <p class="timeline-summary" data-ko="산업 제조 공정의 불량 검출을 자동화하는 머신 비전 소프트웨어를 개발했습니다." data-en="Developed machine vision software to automate defect detection in industrial manufacturing processes.">
+                  산업 제조 공정의 불량 검출을 자동화하는 머신 비전 소프트웨어를 개발했습니다.
+                </p>
+                <ul class="timeline-details">
+                  <li data-ko="C++ 기반 자동 광학 검사(AVI) 시스템 개발" data-en="Developed C++-based Automated Visual Inspection (AVI) system">C++ 기반 자동 광학 검사(AVI) 시스템 개발</li>
+                  <li data-ko="철도 화물 열차, 자동차 브레이크 패드, 카메라 센서 픽셀 불량 검사" data-en="Inspected railway freight cars, automotive brake pads, and camera sensor pixel defects">철도 화물 열차, 자동차 브레이크 패드, 카메라 센서 픽셀 불량 검사</li>
+                  <li data-ko="MATROX MIL, OpenCV, MFC로 솔루션 개발 — MCU와 통합하여 공장 자동화 구현" data-en="Built solutions with MATROX MIL, OpenCV, MFC — integrated with MCU for factory automation">MATROX MIL, OpenCV, MFC로 솔루션 개발 — MCU와 통합하여 공장 자동화 구현</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="프로젝트" data-en="Projects">프로젝트</span>
+        </h2>
+
+        <!-- Node Filter Tabs -->
+        <div class="node-filter" id="nodeFilter">
+          <button class="node-btn active" data-filter="all">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="전체" data-en="All">전체</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="synthetic">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="합성 데이터" data-en="Synthetic Data">합성 데이터</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="xr">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="XR / 에듀테크" data-en="XR / EduTech">XR / 에듀테크</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="rl">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="강화학습" data-en="RL & AI">강화학습</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="ros">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span>ROS2</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="twin">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="디지털 트윈" data-en="Digital Twin">디지털 트윈</span>
+          </button>
+          <span class="node-line" aria-hidden="true"></span>
+          <button class="node-btn" data-filter="hw">
+            <span class="node-dot" aria-hidden="true"></span>
+            <span data-ko="하드웨어" data-en="Hardware">하드웨어</span>
+          </button>
+        </div>
+
+        <!-- Project Cards Container -->
+        <div class="project-grid" id="projectGrid">
+
+          <!-- ===== Synthetic Data ===== -->
+
+          <!-- Featured: NVIDIA Conference -->
+          <a href="https://youtu.be/WrpE6T8RTzY" target="_blank" rel="noopener noreferrer" class="project-card project-card-wide" data-cat="synthetic twin">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/WrpE6T8RTzY/hqdefault.jpg" alt="NVIDIA PLM Conference 2023" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+              <span class="project-badge pixel-text" data-ko="발표" data-en="TALK">발표</span>
+            </div>
+            <div class="project-info">
+              <h4>NVIDIA PLM Conference 2023</h4>
+              <p data-ko="NVIDIA Omniverse 기반 개방형 디지털 트윈 구축 전략" data-en="Open Digital Twin Strategy with NVIDIA Omniverse">NVIDIA Omniverse 기반 개방형 디지털 트윈 구축 전략</p>
+            </div>
+          </a>
+
+          <!-- ADD Synthetic Data Simulator -->
+          <div class="project-card project-card-wide" data-cat="synthetic">
+            <div class="project-gallery">
+              <img src="assets/add-synthetic-sim.png" alt="ADD Synthetic Data Simulator" loading="lazy">
+              <img src="assets/ai-datahub-1.png" alt="AI Data Hub - Multi-sensor" loading="lazy">
+              <img src="assets/ai-datahub-2.jpg" alt="AI Data Hub - Segmentation" loading="lazy">
+              <div class="gallery-nav">
+                <button class="gallery-prev pixel-text" aria-label="Previous">◄</button>
+                <span class="gallery-counter pixel-text">1 / 3</span>
+                <button class="gallery-next pixel-text" aria-label="Next">►</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4 data-ko="AI 합성 데이터 생성 시뮬레이터" data-en="AI Synthetic Data Generation Simulator">AI 합성 데이터 생성 시뮬레이터</h4>
+              <p data-ko="Unity HDRP 기반 초실사 합성 데이터 파이프라인 · Naver LABs, 국방과학연구소(ADD) 협업 · LiDAR, IR, Segmentation, Depth 다중 센서 시뮬레이션" data-en="Photorealistic synthetic data pipeline (Unity HDRP) · Collaborated with Naver LABs & ADD · Multi-sensor simulation: LiDAR, IR, Segmentation, Depth">Unity HDRP 기반 초실사 합성 데이터 파이프라인 · Naver LABs, 국방과학연구소(ADD) 협업 · LiDAR, IR, Segmentation, Depth 다중 센서 시뮬레이션</p>
+              <div class="project-tags">
+                <span class="project-tag-inline">Unity HDRP</span>
+                <span class="project-tag-inline">OpenCV</span>
+                <span class="project-tag-inline">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== XR / EduTech ===== -->
+
+          <!-- Spody EduTech -->
+          <a href="https://www.youtube.com/watch?v=Exp1zakQkhQ" target="_blank" rel="noopener noreferrer" class="project-card project-card-wide" data-cat="xr">
+            <div class="project-gallery">
+              <img src="assets/edutech-game.jpg" alt="Spody EduTech Game" loading="lazy">
+              <img src="https://img.youtube.com/vi/Exp1zakQkhQ/hqdefault.jpg" alt="Spody Video" loading="lazy">
+              <div class="gallery-nav">
+                <button class="gallery-prev pixel-text" aria-label="Previous">◄</button>
+                <span class="gallery-counter pixel-text">1 / 2</span>
+                <button class="gallery-next pixel-text" aria-label="Next">►</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-stat" data-ko="전국 130+ 교육현장 구독 서비스 중" data-en="Active subscription in 130+ schools nationwide">전국 130+ 교육현장 구독 서비스 중</span>
+              <h4 data-ko="스포디 — 구독형 확장현실 교육게임" data-en="Spody — Subscription XR Educational Game">스포디 — 구독형 확장현실 교육게임</h4>
+              <p data-ko="스포츠와 교육을 융합한 인터랙티브 XR 교육 서비스 · Kinect/LiDAR 기반 실시간 모션 인식 · 누리과정 기반 20종 통합 발달 콘텐츠" data-en="Interactive XR education service combining sports & learning · Real-time motion tracking with Kinect/LiDAR · 20 types of integrated developmental content">스포츠와 교육을 융합한 인터랙티브 XR 교육 서비스 · Kinect/LiDAR 기반 실시간 모션 인식 · 누리과정 기반 20종 통합 발달 콘텐츠</p>
+              <div class="project-tags">
+                <span class="project-tag-inline">Unity</span>
+                <span class="project-tag-inline">Kinect</span>
+                <span class="project-tag-inline">LiDAR</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- ===== RL & AI ===== -->
+
+          <a href="https://www.youtube.com/watch?v=4YsCz5fFfj0" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="rl">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/4YsCz5fFfj0/hqdefault.jpg" alt="Spot Curriculum Learning" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Spot Curriculum Learning</h4>
+              <p data-ko="Boston Dynamics Spot PPO 기반 단계적 학습" data-en="Boston Dynamics Spot PPO-based progressive learning">Boston Dynamics Spot PPO 기반 단계적 학습</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=wddv8uCz7a0" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="rl">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/wddv8uCz7a0/hqdefault.jpg" alt="UR16e ML-Agent Training" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>UR16e ML-Agent Training</h4>
+              <p data-ko="UR16e 강화학습 훈련 시리즈" data-en="UR16e reinforcement learning training series">UR16e 강화학습 훈련 시리즈</p>
+            </div>
+          </a>
+
+          <!-- ===== ROS2 ===== -->
+
+          <a href="https://www.youtube.com/watch?v=xtUvIORydzI" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="ros">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/xtUvIORydzI/hqdefault.jpg" alt="ROS2 Navigation Part 1" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>ROS2 Navigation in Unity (1)</h4>
+              <p data-ko="Unity 환경에서 ROS2 Navigation 구현" data-en="Implementing ROS2 Navigation in Unity">Unity 환경에서 ROS2 Navigation 구현</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=OAkzLkqNxz8" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="ros">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/OAkzLkqNxz8/hqdefault.jpg" alt="ROS2 Navigation Part 2" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>ROS2 Navigation in Unity (2)</h4>
+              <p data-ko="고급 Navigation 기능 구현" data-en="Advanced Navigation features">고급 Navigation 기능 구현</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=jrDRIHDpbm8" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="ros">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/jrDRIHDpbm8/hqdefault.jpg" alt="ROS2 SLAM" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>ROS2 SLAM in Unity</h4>
+              <p data-ko="Unity에서 SLAM 매핑 구현" data-en="SLAM mapping in Unity">Unity에서 SLAM 매핑 구현</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=AlpZODWpKlM" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="ros rl">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/AlpZODWpKlM/hqdefault.jpg" alt="A* Pathfinding" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>A* Congestion-Aware Pathfinding</h4>
+              <p data-ko="다중 로봇 교착 해결 알고리즘" data-en="Multi-robot deadlock resolution algorithm">다중 로봇 교착 해결 알고리즘</p>
+            </div>
+          </a>
+
+          <!-- ===== Digital Twin ===== -->
+
+          <a href="https://www.youtube.com/watch?v=Z7nRL82oNe8" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="twin">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/Z7nRL82oNe8/hqdefault.jpg" alt="Unity-MELSEC PLC" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Unity-MELSEC PLC Connection</h4>
+              <p data-ko="Unity와 PLC 실시간 연동 및 Realtime DB" data-en="Real-time Unity-PLC integration with Realtime DB">Unity와 PLC 실시간 연동 및 Realtime DB</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=wVCwxrtvSr4" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="twin">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/wVCwxrtvSr4/hqdefault.jpg" alt="Universal Robot Teaching" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Universal Robot Teaching</h4>
+              <p data-ko="Unity 내 로봇 티칭 시뮬레이터" data-en="Robot teaching simulator in Unity">Unity 내 로봇 티칭 시뮬레이터</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=Io934bWutqM" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="twin">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/Io934bWutqM/hqdefault.jpg" alt="PLC 6-Axis Robot" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>PLC Simulation with 6-Axis Robot</h4>
+              <p data-ko="6축 로봇 PLC 시뮬레이션" data-en="6-axis robot PLC simulation">6축 로봇 PLC 시뮬레이션</p>
+            </div>
+          </a>
+
+          <!-- ===== Hardware ===== -->
+
+          <a href="https://www.instagram.com/p/DUTRhLsCVmj/" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw">
+            <div class="project-thumb project-thumb-placeholder">
+              <span class="project-thumb-icon pixel-text">7SEG</span>
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Kinetic 7-Segment Clock</h4>
+              <p data-ko="3D 프린팅 자체 제작 · Arduino Mega & 30개 SG90 서보" data-en="3D-printed build · Arduino Mega & 30 SG90 servos">3D 프린팅 자체 제작 · Arduino Mega & 30개 SG90 서보</p>
+              <span class="project-tag-inline">3D Printing</span>
+            </div>
+          </a>
+
+          <a href="https://www.threads.com/@korean.henry/post/DV1II8uEroF/media" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw">
+            <div class="project-thumb">
+              <img src="assets/biped-robot.png" alt="Biped Robot 3D Design" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4 data-ko="Biped Robot — 제작 과정" data-en="Biped Robot — Build Process">Biped Robot — 제작 과정</h4>
+              <p data-ko="3D 모델링·프린팅 부품 설계부터 조립까지" data-en="From 3D modeling & printing to assembly">3D 모델링·프린팅 부품 설계부터 조립까지</p>
+              <span class="project-tag-inline">3D Printing</span>
+            </div>
+          </a>
+
+          <a href="https://www.threads.com/@korean.henry/post/DU5_eMXESQQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw rl">
+            <div class="project-thumb">
+              <img src="assets/biped-servo.jpg" alt="Biped Robot Servo Control" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4 data-ko="Biped Robot — 첫 걸음" data-en="Biped Robot — First Steps">Biped Robot — 첫 걸음</h4>
+              <p data-ko="디지털 버스 서보 제어 · 2족 보행 시작" data-en="Digital bus servo control · first bipedal steps">디지털 버스 서보 제어 · 2족 보행 시작</p>
+            </div>
+          </a>
+
+          <a href="https://www.threads.com/@korean.henry/post/DUh8SeYko5o" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw rl">
+            <div class="project-thumb project-thumb-placeholder">
+              <span class="project-thumb-icon pixel-text">SIM</span>
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4 data-ko="Biped Robot — 시뮬레이션" data-en="Biped Robot — Simulation">Biped Robot — 시뮬레이션</h4>
+              <p data-ko="강화학습 시뮬레이션 환경 구축 중" data-en="Building RL simulation environment">강화학습 시뮬레이션 환경 구축 중</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=1hqUJLcsORw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw twin">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/1hqUJLcsORw/hqdefault.jpg" alt="MQTT Broker" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Local MQTT Broker (WPF)</h4>
+              <p data-ko="WPF로 제작한 로컬 MQTT 브로커" data-en="Custom MQTT broker built with WPF">WPF로 제작한 로컬 MQTT 브로커</p>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/watch?v=ZfGiQTE0Pv0" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw">
+            <div class="project-thumb">
+              <img src="https://img.youtube.com/vi/ZfGiQTE0Pv0/hqdefault.jpg" alt="Unreal Cinematic" loading="lazy">
+              <span class="project-play" aria-hidden="true">▶</span>
+            </div>
+            <div class="project-info">
+              <h4>Unreal Cinematic Study</h4>
+              <p data-ko="Unreal Engine 시네마틱 스터디" data-en="Unreal Engine cinematic study">Unreal Engine 시네마틱 스터디</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="학력" data-en="Education">학력</span>
+        </h2>
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="edu-year pixel-text">2023 — 2025</div>
+            <h3 data-ko="국가평생교육진흥원 (학점은행제)" data-en="National Institute for Lifelong Education (Credit Bank)">국가평생교육진흥원 (학점은행제)</h3>
+            <p class="edu-degree" data-ko="컴퓨터 공학 학사" data-en="B.S. Computer Engineering">컴퓨터 공학 학사</p>
+          </div>
+          <div class="edu-card">
+            <div class="edu-year pixel-text">2018 — 2019</div>
+            <h3>Korea Polytechnic</h3>
+            <p class="edu-degree" data-ko="임베디드 시스템 하이테크" data-en="Embedded System Hightech">임베디드 시스템 하이테크</p>
+          </div>
+          <div class="edu-card">
+            <div class="edu-year pixel-text">2015 — 2018</div>
+            <h3 data-ko="한국방송통신대학교" data-en="Korea National Open University">한국방송통신대학교</h3>
+            <p class="edu-degree" data-ko="미디어 사이언스 학사" data-en="B.A. Media Science">미디어 사이언스 학사</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="pixel-marker" aria-hidden="true">►</span>
+          <span data-ko="연락처" data-en="Contact">연락처</span>
+        </h2>
+        <div class="contact-grid">
+          <a href="mailto:henry2craftman@gmail.com" class="contact-card">
+            <span class="contact-icon pixel-text">@</span>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">henry2craftman@gmail.com</span>
+          </a>
+          <a href="https://github.com/henry2craftman" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-icon pixel-text">&lt;/&gt;</span>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/henry2craftman</span>
+          </a>
+          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-icon pixel-text">in</span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/henry-s</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="pixel-text">© 2025 TAEUK.SHIN</span>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <span data-ko="Creative Technologist" data-en="Creative Technologist">Creative Technologist</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
