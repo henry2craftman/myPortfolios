@@ -89,7 +89,21 @@
 
   // --- PDF Download (window.print) ---
   function generatePDF() {
-    window.print();
+    var images = document.querySelectorAll('img[loading="lazy"]');
+    var pending = 0;
+
+    images.forEach(function (img) {
+      img.removeAttribute('loading');
+      if (!img.complete) {
+        pending++;
+        img.onload = img.onerror = function () {
+          pending--;
+          if (pending === 0) window.print();
+        };
+      }
+    });
+
+    if (pending === 0) window.print();
   }
 
   downloadBtn.addEventListener('click', generatePDF);
