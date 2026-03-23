@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Dot Pattern Background -->
-  <div class="dot-bg" aria-hidden="true"></div>
+  <!-- 3D Isometric Pixel Background -->
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -85,7 +85,6 @@
             <a href="#experience" class="btn btn-outline" data-ko="경력 보기" data-en="View Career">경력 보기</a>
           </div>
         </div>
-        <canvas class="hero-canvas" id="pixelCanvas" aria-hidden="true"></canvas>
       </div>
     </section>
 
@@ -585,8 +584,8 @@
           <!-- ===== Hardware ===== -->
 
           <a href="https://www.instagram.com/p/DUTRhLsCVmj/" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw">
-            <div class="project-thumb project-thumb-placeholder">
-              <span class="project-thumb-icon pixel-text">7SEG</span>
+            <div class="project-thumb">
+              <img src="image&video/kineticClock.png" alt="Kinetic 7-Segment Clock" loading="lazy">
               <span class="project-play" aria-hidden="true">▶</span>
             </div>
             <div class="project-info">
@@ -619,16 +618,16 @@
             </div>
           </a>
 
-          <a href="https://www.threads.com/@korean.henry/post/DUh8SeYko5o" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw rl">
-            <div class="project-thumb project-thumb-placeholder">
-              <span class="project-thumb-icon pixel-text">SIM</span>
-              <span class="project-play" aria-hidden="true">▶</span>
+          <div class="project-card" data-cat="hw">
+            <div class="project-thumb">
+              <img src="image&video/bipetic 3d설계.png" alt="Biped Robot 3D Design" loading="lazy">
             </div>
             <div class="project-info">
-              <h4 data-ko="Biped Robot — 시뮬레이션" data-en="Biped Robot — Simulation">Biped Robot — 시뮬레이션</h4>
-              <p data-ko="강화학습 시뮬레이션 환경 구축 중" data-en="Building RL simulation environment">강화학습 시뮬레이션 환경 구축 중</p>
+              <h4 data-ko="Biped Robot — 3D 설계" data-en="Biped Robot — 3D Design">Biped Robot — 3D 설계</h4>
+              <p data-ko="Fusion 360으로 부품 설계 및 모델링" data-en="Parts design & modeling with Fusion 360">Fusion 360으로 부품 설계 및 모델링</p>
+              <span class="project-tag-inline">Fusion 360</span>
             </div>
-          </a>
+          </div>
 
           <a href="https://www.youtube.com/watch?v=1hqUJLcsORw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="hw twin">
             <div class="project-thumb">

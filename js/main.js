@@ -205,120 +205,160 @@
     });
   }
 
-  // --- Interactive Pixel Canvas ---
-  function initPixelCanvas() {
-    var canvas = document.getElementById('pixelCanvas');
+  // --- 3D Isometric Pixel Background ---
+  function initBg3D() {
+    var canvas = document.getElementById('bgCanvas');
     if (!canvas) return;
-
     var ctx = canvas.getContext('2d');
-    var hero = document.getElementById('hero');
-    var mouse = { x: -9999, y: -9999 };
-    var dots = [];
-    var SPACING = 28;
-    var DOT_BASE = 2;
-    var DOT_MAX = 7;
-    var INFLUENCE = 120;
-    var cols, rows;
 
-    // Colors from CSS variables
-    var ACCENT = '#2d2d5e';
-    var ACCENT_LIGHT = '#5a5a8f';
-    var ACCENT_LIGHTER = '#9494c0';
-    var DOT_REST = '#d8dae5';
+    var TW = 48;
+    var TH = 24;
+    var MAX_ELEV = 18;
+    var MOUSE_RADIUS = 200;
+    var BASE_ALPHA = 0.4;
+
+    var mouse = { x: -9999, y: -9999 };
+    var time = 0;
+    var scrollY = 0;
+    var w, h, gridN, offsetX, offsetY;
 
     function resize() {
-      var rect = hero.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-      cols = Math.floor(canvas.width / SPACING) + 1;
-      rows = Math.floor(canvas.height / SPACING) + 1;
-
-      dots = [];
-      for (var r = 0; r < rows; r++) {
-        for (var c = 0; c < cols; c++) {
-          dots.push({
-            x: c * SPACING + SPACING / 2,
-            y: r * SPACING + SPACING / 2,
-            size: DOT_BASE,
-            targetSize: DOT_BASE,
-            alpha: 0.25,
-            targetAlpha: 0.25
-          });
-        }
-      }
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+      var needed = Math.ceil(Math.max(w * 2 / TW, h * 2 / TH)) + 6;
+      gridN = Math.ceil(needed / 2) + 2;
+      offsetX = w / 2;
+      offsetY = h / 2 - (gridN - 1) * TH / 2;
     }
 
-    function lerp(a, b, t) {
-      return a + (b - a) * t;
+    function toScreenX(c, r) {
+      return (c - r) * TW / 2 + offsetX;
+    }
+
+    function toScreenY(c, r) {
+      return (c + r) * TH / 2 + offsetY;
+    }
+
+    function getElevation(c, r) {
+      var t = time;
+      var elev =
+        Math.sin(c * 0.13 + t * 0.7) * Math.cos(r * 0.11 + t * 0.5) * 5 +
+        Math.sin((c + r) * 0.08 + t * 0.35) * 3.5 +
+        Math.sin(c * 0.2 - t * 0.6) * Math.sin(r * 0.16 + t * 0.45) * 2.5;
+
+      var sx = toScreenX(c, r);
+      var sy = toScreenY(c, r);
+      var dx = mouse.x - sx;
+      var dy = mouse.y - sy;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_RADIUS) {
+        var ratio = 1 - dist / MOUSE_RADIUS;
+        elev += ratio * ratio * MAX_ELEV;
+      }
+
+      return Math.max(0, elev);
+    }
+
+    function drawCube(sx, sy, elev) {
+      var hw = TW / 2;
+      var hh = TH / 2;
+
+      if (elev < 0.5) {
+        ctx.globalAlpha = BASE_ALPHA * 0.15;
+        ctx.fillStyle = '#d8dae5';
+        ctx.beginPath();
+        ctx.moveTo(sx, sy - hh);
+        ctx.lineTo(sx + hw, sy);
+        ctx.lineTo(sx, sy + hh);
+        ctx.lineTo(sx - hw, sy);
+        ctx.closePath();
+        ctx.fill();
+        return;
+      }
+
+      var ratio = Math.min(elev / MAX_ELEV, 1);
+      ctx.globalAlpha = BASE_ALPHA * (0.25 + ratio * 0.75);
+
+      var topCol, leftCol, rightCol;
+      if (ratio > 0.55) {
+        topCol = '#6a6aaf'; leftCol = '#5252a0'; rightCol = '#3d3d80';
+      } else if (ratio > 0.25) {
+        topCol = '#9494c0'; leftCol = '#8080b0'; rightCol = '#6b6b9a';
+      } else {
+        topCol = '#b8b8d8'; leftCol = '#a4a4c8'; rightCol = '#9090b4';
+      }
+
+      // Right face
+      ctx.fillStyle = rightCol;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy + hh);
+      ctx.lineTo(sx + hw, sy);
+      ctx.lineTo(sx + hw, sy - elev);
+      ctx.lineTo(sx, sy + hh - elev);
+      ctx.closePath();
+      ctx.fill();
+
+      // Left face
+      ctx.fillStyle = leftCol;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy + hh);
+      ctx.lineTo(sx - hw, sy);
+      ctx.lineTo(sx - hw, sy - elev);
+      ctx.lineTo(sx, sy + hh - elev);
+      ctx.closePath();
+      ctx.fill();
+
+      // Top face
+      ctx.fillStyle = topCol;
+      ctx.beginPath();
+      ctx.moveTo(sx, sy - hh - elev);
+      ctx.lineTo(sx + hw, sy - elev);
+      ctx.lineTo(sx, sy + hh - elev);
+      ctx.lineTo(sx - hw, sy - elev);
+      ctx.closePath();
+      ctx.fill();
     }
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.016;
+      ctx.clearRect(0, 0, w, h);
 
-      for (var i = 0; i < dots.length; i++) {
-        var d = dots[i];
-        var dx = mouse.x - d.x;
-        var dy = mouse.y - d.y;
-        var dist = Math.sqrt(dx * dx + dy * dy);
+      for (var sum = 0; sum < gridN * 2; sum++) {
+        for (var c = Math.max(0, sum - gridN + 1); c <= Math.min(sum, gridN - 1); c++) {
+          var r = sum - c;
+          if (r < 0 || r >= gridN) continue;
 
-        if (dist < INFLUENCE) {
-          var ratio = 1 - dist / INFLUENCE;
-          d.targetSize = DOT_BASE + (DOT_MAX - DOT_BASE) * ratio;
-          d.targetAlpha = 0.25 + 0.75 * ratio;
-        } else {
-          d.targetSize = DOT_BASE;
-          d.targetAlpha = 0.25;
+          var sx = toScreenX(c, r);
+          var sy = toScreenY(c, r);
+          if (sx + TW < 0 || sx - TW > w) continue;
+          if (sy + TH + MAX_ELEV < 0 || sy - MAX_ELEV > h) continue;
+
+          drawCube(sx, sy, getElevation(c, r));
         }
-
-        d.size = lerp(d.size, d.targetSize, 0.15);
-        d.alpha = lerp(d.alpha, d.targetAlpha, 0.15);
-
-        // Color based on proximity
-        var color;
-        if (d.size > DOT_BASE + (DOT_MAX - DOT_BASE) * 0.6) {
-          color = ACCENT;
-        } else if (d.size > DOT_BASE + (DOT_MAX - DOT_BASE) * 0.25) {
-          color = ACCENT_LIGHT;
-        } else if (d.size > DOT_BASE + 0.3) {
-          color = ACCENT_LIGHTER;
-        } else {
-          color = DOT_REST;
-        }
-
-        ctx.globalAlpha = d.alpha;
-        ctx.fillStyle = color;
-        ctx.fillRect(
-          Math.round(d.x - d.size / 2),
-          Math.round(d.y - d.size / 2),
-          Math.round(d.size),
-          Math.round(d.size)
-        );
       }
 
       ctx.globalAlpha = 1;
       requestAnimationFrame(draw);
     }
 
-    hero.addEventListener('mousemove', function (e) {
-      var rect = hero.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+    window.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     });
 
-    hero.addEventListener('mouseleave', function () {
+    window.addEventListener('mouseleave', function () {
       mouse.x = -9999;
       mouse.y = -9999;
     });
 
-    // Touch support
-    hero.addEventListener('touchmove', function (e) {
-      var rect = hero.getBoundingClientRect();
-      var touch = e.touches[0];
-      mouse.x = touch.clientX - rect.left;
-      mouse.y = touch.clientY - rect.top;
+    window.addEventListener('touchmove', function (e) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
     }, { passive: true });
 
-    hero.addEventListener('touchend', function () {
+    window.addEventListener('touchend', function () {
       mouse.x = -9999;
       mouse.y = -9999;
     });
@@ -331,7 +371,7 @@
   // --- Initialize ---
   initNodeFilter();
   initGalleries();
-  initPixelCanvas();
+  initBg3D();
   initScrollAnimations();
   handleScroll();
 })();
