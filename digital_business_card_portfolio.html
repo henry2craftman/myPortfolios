@@ -730,9 +730,19 @@
 
       <!-- Post-it Notes Board -->
       <div>
-        <h4 class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1">
-          <span>📌</span> 방명록 보드
-        </h4>
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="text-xs font-bold text-slate-600 flex items-center gap-1">
+            <span>📌</span> 방명록 보드
+          </h4>
+          <div class="flex items-center gap-1.5 text-[10px]">
+            <button onclick="clearAllNotes()" class="px-2 py-0.5 rounded-lg border border-slate-300 bg-white text-slate-500 hover:text-coral hover:border-coral transition-colors" title="모든 방명록 삭제">
+              전체 비우기
+            </button>
+            <button onclick="resetDefaultNotes()" class="px-2 py-0.5 rounded-lg border border-slate-300 bg-white text-slate-500 hover:text-bubble hover:border-bubble transition-colors" title="기본 방명록 불러오기">
+              기본값 복원
+            </button>
+          </div>
+        </div>
         <div id="stickyBoard" class="grid grid-cols-2 gap-2.5">
           <!-- Dynamic sticky notes loaded via JS -->
         </div>
@@ -973,27 +983,65 @@
 
     function loadNotes() {
       const board = document.getElementById('stickyBoard');
-      let notes = JSON.parse(localStorage.getItem('henry_guestbook_notes') || 'null');
-      if (!notes) {
-        notes = defaultNotes;
-        localStorage.setItem('henry_guestbook_notes', JSON.stringify(notes));
-      }
+      const saved = localStorage.getItem('henry_guestbook_notes');
+      let notes = saved !== null ? JSON.parse(saved) : defaultNotes;
 
       board.innerHTML = '';
-      notes.forEach(note => {
+
+      if (!notes || notes.length === 0) {
+        board.innerHTML = `
+          <div class="col-span-2 text-center py-6 text-xs text-slate-500 bg-white/80 rounded-2xl border-2 border-dashed border-darkPop">
+            <span class="text-lg block mb-1">🎈</span>
+            남겨진 방명록이 없습니다.<br>
+            첫 번째 포스트잇을 남겨보세요!
+          </div>
+        `;
+        return;
+      }
+
+      notes.forEach((note, idx) => {
         const div = document.createElement('div');
-        div.className = `p-3 rounded-2xl border-2 border-darkPop shadow-pop-sm ${note.color} flex flex-col justify-between transform rotate-[${note.rot || 0}deg]`;
+        div.className = `p-3 rounded-2xl border-2 border-darkPop shadow-pop-sm ${note.color || 'bg-yellow-200'} flex flex-col justify-between transform rotate-[${note.rot || 0}deg] relative group`;
         div.innerHTML = `
           <div>
             <div class="flex items-center justify-between text-xs font-bold mb-1">
-              <span class="text-darkPop font-extrabold truncate">${escapeHtml(note.name)}</span>
-              <span class="text-sm">${note.emoji || '⚡'}</span>
+              <div class="flex items-center gap-1 min-w-0 pr-1">
+                <span class="text-sm shrink-0">${note.emoji || '⚡'}</span>
+                <span class="text-darkPop font-extrabold truncate text-[11px]">${escapeHtml(note.name)}</span>
+              </div>
+              <button onclick="deleteStickyNote(${idx})" class="text-slate-400 hover:text-coral transition-colors p-0.5 rounded" title="이 포스트잇 삭제">
+                <i data-lucide="x" class="w-3.5 h-3.5"></i>
+              </button>
             </div>
             <p class="text-xs text-slate-800 break-words leading-relaxed">${escapeHtml(note.msg)}</p>
           </div>
         `;
         board.appendChild(div);
       });
+      lucide.createIcons();
+    }
+
+    function deleteStickyNote(index) {
+      const saved = localStorage.getItem('henry_guestbook_notes');
+      let notes = saved !== null ? JSON.parse(saved) : [...defaultNotes];
+      notes.splice(index, 1);
+      localStorage.setItem('henry_guestbook_notes', JSON.stringify(notes));
+      loadNotes();
+      showToast('포스트잇이 삭제되었습니다.', '🗑️');
+    }
+
+    function clearAllNotes() {
+      if (confirm('방명록을 모두 비우시겠습니까?')) {
+        localStorage.setItem('henry_guestbook_notes', JSON.stringify([]));
+        loadNotes();
+        showToast('방명록이 모두 삭제되었습니다.', '🧹');
+      }
+    }
+
+    function resetDefaultNotes() {
+      localStorage.setItem('henry_guestbook_notes', JSON.stringify(defaultNotes));
+      loadNotes();
+      showToast('기본 예시 방명록으로 복원되었습니다!', '✨');
     }
 
     function addStickyNote(e) {
