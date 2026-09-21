@@ -805,6 +805,41 @@
     </div>
   </div>
 
+  <!-- MODAL: Contact Save Guide Modal for Smartphones -->
+  <div id="contactGuideModal" class="fixed inset-0 bg-darkPop/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-white border-3 border-darkPop shadow-pop-lg rounded-3xl p-5 w-full max-w-xs text-left transform scale-95 transition-transform duration-200 relative" id="contactGuideCard">
+      <button onclick="closeContactGuideModal()" class="absolute top-3 right-3 p-1.5 rounded-full border-2 border-darkPop bg-slate-100 hover:bg-slate-200 shadow-pop-sm text-darkPop">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-2xl">📲</span>
+        <h3 class="text-sm font-extrabold text-darkPop">연락처 저장 안내</h3>
+      </div>
+
+      <div class="bg-amber-50 border-2 border-darkPop rounded-2xl p-3 mb-3 text-xs text-slate-700 space-y-1.5">
+        <p class="font-extrabold text-darkPop flex items-center gap-1">
+          <span>💡</span> 파일 다운로드 후 필수 단계:
+        </p>
+        <ol class="list-decimal pl-4 space-y-1 text-[11px] leading-snug">
+          <li>화면 상단 알림바에서 <b>'다운로드 완료'</b> 알림을 터치하세요.</li>
+          <li>삼성 연락처(또는 주소록)가 열리면 <b>[저장]</b>을 눌러주세요.</li>
+          <li>주소록에서 <b>'신태욱'</b> 또는 <b>'Henry'</b>로 검색됩니다!</li>
+        </ol>
+      </div>
+
+      <div class="space-y-2">
+        <a href="tel:010-8467-1924" class="pop-card w-full py-2 bg-sunshine text-darkPop font-extrabold text-xs rounded-xl border-2 border-darkPop shadow-pop-sm flex items-center justify-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>전화앱으로 바로 등록 (010-8467-1924)</span>
+        </a>
+        <button onclick="closeContactGuideModal()" class="w-full py-2 bg-darkPop text-white font-extrabold text-xs rounded-xl shadow-pop-sm">
+          확인했습니다 ✨
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Capsule -->
   <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-white border-2 border-darkPop shadow-pop-lg px-4 py-2 rounded-full text-xs font-extrabold text-darkPop flex items-center gap-2 opacity-0 -translate-y-4 pointer-events-none transition-all duration-200">
     <span id="toastIcon">✨</span>
@@ -928,34 +963,62 @@
       card.classList.remove('scale-100');
     }
 
-    // Download vCard for Henry Shin
+    // Download vCard for Henry Shin (Optimized for Samsung & iOS Contacts)
     function saveContactVCF() {
       fireCuteConfetti();
+
+      // UTF-8 BOM to prevent Korean character corruption on Android/Samsung Contacts
       const vcard = [
         "BEGIN:VCARD",
         "VERSION:3.0",
-        "N:신;태욱;;;",
-        "FN:신태욱 (Henry Shin)",
-        "ORG:PixelGravity",
-        "TITLE:Industrial Digital Twin & Robotics Simulation Engineer",
-        "TEL;TYPE=CELL,VOICE:010-8467-1924",
-        "EMAIL;TYPE=INTERNET:henry2craftman@gmail.com",
+        "N;CHARSET=UTF-8:신;태욱;;;",
+        "FN;CHARSET=UTF-8:신태욱 (Henry Shin)",
+        "NICKNAME;CHARSET=UTF-8:Henry",
+        "ORG;CHARSET=UTF-8:PixelGravity",
+        "TITLE;CHARSET=UTF-8:Industrial Digital Twin & Robotics Simulation Engineer",
+        "TEL;TYPE=CELL,VOICE,PREF:010-8467-1924",
+        "EMAIL;TYPE=INTERNET,PREF:henry2craftman@gmail.com",
         "URL:https://www.linkedin.com/in/henry-s-8a1b7b152/",
-        "NOTE:Industrial Digital Twin & Robotics Simulation Engineer | Technology Translator for Physical AI",
+        "NOTE;CHARSET=UTF-8:Physical AI & Robotics Simulation Engineer (010-8467-1924)",
         "END:VCARD"
       ].join("\r\n");
 
-      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      // Prepend UTF-8 BOM (\uFEFF)
+      const blob = new Blob(["\uFEFF" + vcard], { type: "text/vcard;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Henry_Shin_Contact.vcf";
+      a.download = "신태욱_Henry_Shin.vcf";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      showToast('Henry의 연락처(.vcf)가 저장되었어요!', '💾');
+      showContactSaveGuideModal();
+    }
+
+    // Modal to guide smartphone users to open downloaded .vcf file
+    function showContactSaveGuideModal() {
+      const modal = document.getElementById('contactGuideModal');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        const card = document.getElementById('contactGuideCard');
+        if (card) {
+          card.classList.remove('scale-95');
+          card.classList.add('scale-100');
+        }
+      } else {
+        showToast('파일 다운로드 후 [열기]를 눌러 저장해주세요!', '📲');
+      }
+    }
+
+    function closeContactGuideModal() {
+      const modal = document.getElementById('contactGuideModal');
+      if (modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+      }
     }
 
     // Guestbook Logic (Local Storage Persistent)
