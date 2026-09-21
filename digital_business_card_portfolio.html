@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>김민우 🌟 Minwoo's Playful Space</title>
+  <title>Henry Shin (신태욱) 🌟 Digital Twin & Robotics Portfolio</title>
+  <meta name="description" content="Henry Shin — Industrial Digital Twin & Robotics Simulation Engineer | Technology Translator for Physical AI">
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- QRious for dynamic QR generation -->
@@ -13,7 +15,7 @@
   <!-- Google Fonts & Lucide Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Pretendard:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -23,6 +25,7 @@
           fontFamily: {
             sans: ['Pretendard', '-apple-system', 'sans-serif'],
             fun: ['Gaegu', 'cursive', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
             butter: '#FFFDF0',
@@ -62,42 +65,51 @@
   </script>
 
   <style>
+    /* Neobrutalism custom styling */
     body {
-      background-color: #FFFDF7;
-      background-image: radial-gradient(#FDE68A 0.75px, transparent 0.75px), radial-gradient(#FDE68A 0.75px, #FFFDF7 0.75px);
-      background-size: 30px 30px;
-      background-position: 0 0, 15px 15px;
+      background-color: #FFFDF0;
+      color: #1E232A;
+      background-image: radial-gradient(#E2DFD2 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
     }
+
     .pop-card {
-      transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .pop-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px #1E232A;
     }
     .pop-card:active {
       transform: translate(2px, 2px);
-      box-shadow: 1px 1px 0px #1E232A !important;
+      box-shadow: 1px 1px 0px #1E232A;
     }
-    .sticker-tag {
-      transform: rotate(var(--rot, 0deg));
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
     }
-    /* Hide scrollbars gracefully */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    ::-webkit-scrollbar-track {
+      background: #FFFDF0;
     }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    ::-webkit-scrollbar-thumb {
+      background: #1E232A;
+      border-radius: 9999px;
     }
   </style>
 </head>
+<body class="min-h-screen flex flex-col items-center justify-start py-6 px-3 sm:px-4 font-sans selection:bg-sunshine selection:text-darkPop pb-28">
 
-<body class="text-slate-800 min-h-screen flex justify-center selection:bg-sunshine selection:text-darkPop font-sans antialiased pb-24">
+  <!-- Main Container (Card format optimized for all viewports) -->
+  <main class="w-full max-w-md mx-auto">
 
-  <main class="w-full max-w-md min-h-screen flex flex-col px-4 pt-5 relative">
-    
-    <!-- Top Floating Header Pill -->
-    <header class="flex items-center justify-between bg-white border-2 border-darkPop shadow-pop rounded-full px-4 py-2 mb-5">
-      <div class="flex items-center gap-1.5">
-        <span class="text-lg animate-bounce-gentle">👋</span>
-        <span class="text-xs font-bold tracking-tight text-slate-800">만나서 반가워요!</span>
+    <!-- Top Status Bar & Quick Actions -->
+    <header class="flex items-center justify-between mb-3 px-1">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-sunshine border-2 border-darkPop font-mono text-xs font-bold shadow-pop-sm">
+          ⚡
+        </span>
+        <span class="text-xs font-bold tracking-tight text-slate-800">Physical AI & Robotics</span>
       </div>
 
       <div class="flex items-center gap-1.5">
@@ -114,19 +126,20 @@
       </div>
     </header>
 
-    <section class="bg-white border-2 border-darkPop shadow-pop-lg rounded-3xl p-5 mb-5 relative overflow-hidden">
-      <!-- Fun decorative stickers in background -->
-      <span class="absolute -top-1 -right-2 bg-popPink text-white font-fun text-sm font-bold px-3 py-1 rounded-full border-2 border-darkPop shadow-pop-sm rotate-12 select-none">
-        Always Curious! ✨
+    <!-- Profile Hero Card -->
+    <section class="bg-white border-2 border-darkPop shadow-pop-lg rounded-3xl p-5 mb-4 relative overflow-hidden">
+      <!-- Fun decorative badge in background -->
+      <span class="absolute -top-1 -right-2 bg-popPink text-white font-fun text-xs sm:text-sm font-bold px-3 py-1 rounded-full border-2 border-darkPop shadow-pop-sm rotate-12 select-none">
+        Physical AI ✨
       </span>
 
       <div class="flex flex-col items-center text-center pt-2">
-        <!-- Interactive Avatar with cute emoji ring -->
+        <!-- Interactive Avatar with cute robot ring -->
         <div class="relative mb-3.5 group cursor-pointer" onclick="fireCuteConfetti()">
           <div class="w-24 h-24 rounded-full border-2 border-darkPop p-1 bg-gradient-to-tr from-sunshine via-popPink to-mint shadow-pop-sm group-hover:rotate-6 transition-transform">
             <img 
-              src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=MinwooMaker&backgroundColor=ffd166" 
-              alt="귀여운 미니 아바타" 
+              src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=HenryShinMaker&backgroundColor=ffd166" 
+              alt="Henry Shin 아바타" 
               class="w-full h-full rounded-full bg-white object-cover"
             >
           </div>
@@ -138,16 +151,17 @@
 
         <!-- Name & Catchy Tagline -->
         <h1 class="text-2xl font-extrabold text-darkPop flex items-center gap-1.5 mb-1">
-          김민우 <span class="text-sm font-bold text-slate-500 font-fun text-base">@minwoo.dev</span>
+          Henry Shin <span class="text-xs font-bold text-slate-500 font-mono bg-slate-100 px-2 py-0.5 rounded-full border border-darkPop">@korean.henry</span>
         </h1>
         
-        <p class="text-xs sm:text-sm font-bold text-slate-700 mb-3 bg-amber-100/80 px-3 py-1 rounded-full border border-amber-300">
-          💡 상상을 현실 소프트웨어 & 로봇으로 만드는 메이커
+        <p class="text-xs font-extrabold text-slate-800 mb-3 bg-sunshine/40 px-3 py-1.5 rounded-2xl border-2 border-darkPop leading-relaxed">
+          Industrial Digital Twin & Robotics Simulation Engineer<br>
+          <span class="text-slate-600 font-bold">Technology Translator for Physical AI</span>
         </p>
 
-        <!-- Cute "Now Doing" Live Status Bubble -->
-        <div class="w-full bg-[#F3F4F6] border-2 border-darkPop rounded-2xl p-3 text-left shadow-pop-sm relative">
-          <div class="flex items-center justify-between mb-1">
+        <!-- Live Status Bubble: 교육 및 최신 활동 -->
+        <div class="w-full bg-[#F6F8FA] border-2 border-darkPop rounded-2xl p-3 text-left shadow-pop-sm relative">
+          <div class="flex items-center justify-between mb-1.5">
             <div class="flex items-center gap-1.5">
               <span class="relative flex h-2.5 w-2.5">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -155,104 +169,118 @@
               </span>
               <span class="text-[11px] font-extrabold text-emerald-700 tracking-wide uppercase font-mono">CURRENTLY VIBING</span>
             </div>
-            <span class="text-[11px] text-slate-500 font-fun font-bold">2026 NOW 🚀</span>
+            <span class="text-[10px] bg-darkPop text-white px-2 py-0.5 rounded-full font-mono font-bold">LIVE 🚀</span>
           </div>
-          <p class="text-xs font-medium text-slate-800 leading-snug">
-            현실과 가상을 잇는 디지털 트윈 로봇 & 0.001초 제어 사이드 프로젝트에 푹 빠져있어요!
-          </p>
-          <div class="flex flex-wrap gap-1.5 mt-2">
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#로보틱스</span>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#3D시뮬레이션</span>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#커피덕후☕</span>
+          
+          <div class="text-xs text-slate-800 space-y-1">
+            <p class="font-bold text-darkPop flex items-center gap-1">
+              <span>📍</span> 판교 가상융합산업허브 4층 가상융합기술 캠퍼스
+            </p>
+            <p class="text-[11px] text-slate-600 font-medium pl-4 border-l-2 border-sunshine">
+              [재직자대상교육] <b>생성형 AI를 활용한 산업 디지털 트윈 XR 시뮬레이션 제작 과정</b>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mt-2.5">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#산업디지털트윈</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#PhysicalAI</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#XR시뮬레이션</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white border border-darkPop text-slate-700 shadow-pop-sm">#재직자캠퍼스</span>
           </div>
         </div>
       </div>
     </section>
 
-    <nav class="flex items-center justify-between gap-1.5 p-1.5 bg-white border-2 border-darkPop shadow-pop rounded-2xl mb-4 text-xs font-bold">
+    <!-- Navigation Tabs (Links, Career, Projects, Guestbook) -->
+    <nav class="flex items-center justify-between gap-1 p-1 bg-white border-2 border-darkPop shadow-pop rounded-2xl mb-4 text-xs font-bold">
       <button onclick="changeTab('links')" id="btn-tab-links" class="tab-target flex-1 py-2 rounded-xl text-center transition-all bg-darkPop text-white shadow-pop-sm">
         🚀 링크
       </button>
+      <button onclick="changeTab('career')" id="btn-tab-career" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
+        💼 경력
+      </button>
       <button onclick="changeTab('projects')" id="btn-tab-projects" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
         🛠️ 프로젝트
-      </button>
-      <button onclick="changeTab('about')" id="btn-tab-about" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
-        🎈 내 이야기
       </button>
       <button onclick="changeTab('guestbook')" id="btn-tab-guestbook" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
         💌 방명록
       </button>
     </nav>
 
+    <!-- TAB 1: Quick Links & Channels -->
     <div id="tab-links" class="tab-content space-y-3">
-      <!-- Coffee Chat Button (High Catch CTA) -->
-      <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" 
-         class="pop-card block bg-[#FFF4D9] border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-[#FFE8B3]">
+      
+      <!-- LinkedIn (Featured) -->
+      <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" rel="noopener noreferrer" 
+         class="pop-card block bg-[#E8EAFF] border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-[#DCE1FF]">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-11 h-11 rounded-2xl bg-sunshine border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
-              ☕
+            <div class="w-11 h-11 rounded-2xl bg-white border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
+              💼
             </div>
             <div class="text-left">
               <div class="flex items-center gap-1.5">
-                <span class="text-sm font-extrabold text-darkPop">가벼운 커피챗 신청하기</span>
-                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-coral text-white border border-darkPop">OPEN</span>
+                <span class="text-sm font-extrabold text-darkPop">LinkedIn 프로필 연결</span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#0077B5] text-white border border-darkPop">CONNECT</span>
               </div>
-              <p class="text-xs text-slate-600 mt-0.5">새로운 아이디어, 로봇/코딩 이야기 언제든 환영해요!</p>
+              <p class="text-xs text-slate-600 mt-0.5">상세 경력 및 Physical AI 네트워킹</p>
             </div>
           </div>
           <i data-lucide="arrow-up-right" class="w-5 h-5 text-darkPop group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
         </div>
       </a>
 
-      <!-- Tech & Life Blog -->
-      <a href="https://velog.io" target="_blank" rel="noopener noreferrer" 
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-slate-50">
+      <!-- Free ROS2 Course & Tech Blog -->
+      <a href="https://blog.naver.com/henry2craftman" target="_blank" rel="noopener noreferrer" 
+         class="pop-card block bg-[#E8F8F5] border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-[#D5F5EE]">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-11 h-11 rounded-2xl bg-lavender border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
-              📝
+            <div class="w-11 h-11 rounded-2xl bg-white border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
+              📗
             </div>
             <div class="text-left">
-              <span class="text-sm font-extrabold text-darkPop block">기술 & 일상 기록 블로그</span>
-              <p class="text-xs text-slate-500 mt-0.5">삽질하며 배운 꿀팁들과 재밌는 이야기 모음</p>
+              <div class="flex items-center gap-1.5">
+                <span class="text-sm font-extrabold text-darkPop">모두의 ROS2 & 기술 블로그</span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-mint text-white border border-darkPop">FREE</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-0.5">ROS2 입문 무료강의 및 로보틱스 개발 기록</p>
             </div>
           </div>
-          <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-darkPop transition-colors"></i>
+          <i data-lucide="arrow-up-right" class="w-5 h-5 text-darkPop group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
         </div>
       </a>
 
       <!-- GitHub -->
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+      <a href="https://github.com/henry2craftman" target="_blank" rel="noopener noreferrer" 
          class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-slate-50">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-11 h-11 rounded-2xl bg-[#E8F8F5] border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
+            <div class="w-11 h-11 rounded-2xl bg-sunshine border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
               💻
             </div>
             <div class="text-left">
               <div class="flex items-center gap-1.5">
-                <span class="text-sm font-extrabold text-darkPop">GitHub 놀이터</span>
-                <span class="text-[10px] font-mono font-bold text-slate-500">@minwoo-dev</span>
+                <span class="text-sm font-extrabold text-darkPop">GitHub 저장소</span>
+                <span class="text-[10px] font-mono font-bold text-slate-500">@henry2craftman</span>
               </div>
-              <p class="text-xs text-slate-500 mt-0.5">만들어둔 오픈소스와 귀여운 토이 프로젝트 구경</p>
+              <p class="text-xs text-slate-500 mt-0.5">시뮬레이션, 디지털 트윈, 오픈소스 프로젝트</p>
             </div>
           </div>
           <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-darkPop transition-colors"></i>
         </div>
       </a>
 
-      <!-- Instagram / SNS -->
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+      <!-- Threads & Social -->
+      <a href="https://www.threads.com/@korean.henry" target="_blank" rel="noopener noreferrer" 
          class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 group hover:bg-slate-50">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
             <div class="w-11 h-11 rounded-2xl bg-[#FFE4E6] border-2 border-darkPop flex items-center justify-center text-xl shadow-pop-sm group-hover:rotate-12 transition-transform">
-              📸
+              🤖
             </div>
             <div class="text-left">
-              <span class="text-sm font-extrabold text-darkPop block">인스타그램 일상</span>
-              <p class="text-xs text-slate-500 mt-0.5">데스크 셋업, 커피 맛집, 강아지 산책 사진</p>
+              <span class="text-sm font-extrabold text-darkPop block">Threads & Instagram</span>
+              <p class="text-xs text-slate-500 mt-0.5">2족 보행 로봇 설계, 키네틱 클럭 메이킹 일상</p>
             </div>
           </div>
           <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-darkPop transition-colors"></i>
@@ -261,7 +289,7 @@
 
       <!-- Quick Contact Pills (Copy & Send) -->
       <div class="grid grid-cols-2 gap-2.5 pt-1">
-        <button onclick="copyInfo('dev.minwoo.kim@example.com', '이메일 주소가 쏙 복사되었어요! 💌')" 
+        <button onclick="copyInfo('henry2craftman@gmail.com', '이메일 주소가 복사되었습니다! 💌')" 
                 class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3 text-left group">
           <div class="flex items-center gap-2">
             <span class="text-base">📫</span>
@@ -272,170 +300,346 @@
           </div>
         </button>
 
-        <button onclick="copyInfo('010-8921-3420', '전화번호가 복사되었어요! 📞')" 
-                class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3 text-left group">
+        <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" rel="noopener noreferrer"
+           class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3 text-left group block">
           <div class="flex items-center gap-2">
-            <span class="text-base">🤙</span>
+            <span class="text-base">💬</span>
             <div>
-              <span class="text-[10px] font-bold text-slate-500 uppercase block">PHONE</span>
-              <span class="text-xs font-extrabold text-darkPop truncate block">연락처 복사하기</span>
+              <span class="text-[10px] font-bold text-slate-500 uppercase block">COFFEE CHAT</span>
+              <span class="text-xs font-extrabold text-darkPop truncate block">커피챗 문의</span>
             </div>
           </div>
-        </button>
+        </a>
       </div>
     </div>
 
-    <div id="tab-projects" class="tab-content hidden space-y-3">
-      <!-- Project 1 -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 cursor-pointer hover:bg-amber-50/40" onclick="openFunModal('dt')">
-        <div class="flex items-start justify-between">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">🤖</span>
-            <div>
-              <h3 class="text-sm font-extrabold text-darkPop">가상과 현실을 잇는 디지털 트윈</h3>
-              <p class="text-[11px] font-medium text-slate-500">실시간 3D 가상 공간에서 로봇 조종하기</p>
-            </div>
-          </div>
-          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-mint text-white border border-darkPop shadow-pop-sm">진행중</span>
-        </div>
-        <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity 3D</span>
-          <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">ROS 2</span>
-          <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">IoT 통신</span>
-        </div>
-      </div>
+    <!-- TAB 2: Career / Experience -->
+    <div id="tab-career" class="tab-content hidden space-y-3.5">
 
-      <!-- Project 2 -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 cursor-pointer hover:bg-sky-50/40" onclick="openFunModal('hardware')">
-        <div class="flex items-start justify-between">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">⚡</span>
-            <div>
-              <h3 class="text-sm font-extrabold text-darkPop">0.001초(1ms)의 마법! 초정밀 제어</h3>
-              <p class="text-[11px] font-medium text-slate-500">모터와 센서가 한 치의 오차도 없이 착착!</p>
-            </div>
+      <!-- Career 1: PixelGravity -->
+      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-mint text-white border border-darkPop shadow-pop-sm inline-block mb-1">
+              CURRENT · 2026.09 - 현재
+            </span>
+            <h3 class="text-sm font-extrabold text-darkPop">PixelGravity</h3>
+            <p class="text-xs font-bold text-slate-700">자영업 / 개인사업 · 대한민국 서울</p>
           </div>
-          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-sunshine text-darkPop border border-darkPop shadow-pop-sm">완료</span>
+          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
-        <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">C / C++</span>
-          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">FreeRTOS</span>
-          <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">STM32 칩</span>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 cursor-pointer hover:bg-emerald-50/40" onclick="openFunModal('ai')">
-        <div class="flex items-start justify-between">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">✨</span>
-            <div>
-              <h3 class="text-sm font-extrabold text-darkPop">고장 나기 전에 알려주는 똑똑한 AI</h3>
-              <p class="text-[11px] font-medium text-slate-500">진동과 소리를 듣고 먼저 진단해 주는 도우미</p>
-            </div>
-          </div>
-          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-lavender text-darkPop border border-darkPop shadow-pop-sm">인기</span>
-        </div>
-        <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-violet-100 rounded-md border border-darkPop">Python</span>
-          <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">AI 모델링</span>
-          <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">FastAPI</span>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 cursor-pointer hover:bg-pink-50/40" onclick="openFunModal('teaching')">
-        <div class="flex items-start justify-between">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">📚</span>
-            <div>
-              <h3 class="text-sm font-extrabold text-darkPop">누구나 쉽게 배우는 하드웨어 코딩</h3>
-              <p class="text-[11px] font-medium text-slate-500">동료와 주니어를 위한 쉬운 가이드 & 워크숍</p>
-            </div>
-          </div>
-          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-bubble text-white border border-darkPop shadow-pop-sm">지속중</span>
-        </div>
-        <div class="mt-3 flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-orange-100 rounded-md border border-darkPop">120+ 멘티</span>
-          <span class="px-2 py-0.5 bg-teal-100 rounded-md border border-darkPop">오픈소스 팁</span>
-        </div>
-      </div>
-    </div>
-
-    <div id="tab-about" class="tab-content hidden space-y-4">
-      <!-- Cute Bio Box -->
-      <div class="bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4">
-        <h3 class="text-sm font-extrabold text-darkPop flex items-center gap-1.5 mb-2">
-          <span>👋</span> 안녕하세요! 메이커 김민우입니다
-        </h3>
-        <p class="text-xs text-slate-600 leading-relaxed">
-          어릴 적 레고 조립하던 설렘 그대로, 지금은 화면 속 코드와 기계를 연결해 실제로 움직이는 로봇을 만들고 있어요. 복잡하고 어려운 기술 용어보다는 <b>직관적이고 재미있는 인터랙션</b>을 사랑합니다!
+        <p class="text-xs font-bold text-bubble mb-2">
+          Industrial Digital Twin & Robotics Simulation Engineer | Technology Translator for Physical AI
         </p>
-      </div>
-
-      <!-- Things I Love (Tags) -->
-      <div class="bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4">
-        <h3 class="text-xs font-extrabold text-darkPop mb-2.5 flex items-center gap-1">
-          <span>💖</span> 좋아하는 것들 (취향 기록)
-        </h3>
-        <div class="flex flex-wrap gap-2 text-xs font-bold">
-          <span class="px-3 py-1 bg-yellow-200 border-2 border-darkPop rounded-full shadow-pop-sm">☕ 핸드드립 커피</span>
-          <span class="px-3 py-1 bg-pink-200 border-2 border-darkPop rounded-full shadow-pop-sm">🤖 귀여운 로봇들</span>
-          <span class="px-3 py-1 bg-blue-200 border-2 border-darkPop rounded-full shadow-pop-sm">🎧 시티팝 & Lo-fi</span>
-          <span class="px-3 py-1 bg-emerald-200 border-2 border-darkPop rounded-full shadow-pop-sm">🐾 강아지와 공원 산책</span>
-          <span class="px-3 py-1 bg-purple-200 border-2 border-darkPop rounded-full shadow-pop-sm">🧩 3D 프린터 출력</span>
+        <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+          "PixelGravity bridges industrial reality and digital intelligence, helping manufacturers prepare their processes, data, and robots for Physical AI."
+        </p>
+        <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Physical AI</span>
+          <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">Digital Twin</span>
+          <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">Robotics</span>
         </div>
       </div>
 
-      <!-- Quick Timeline Journey -->
-      <div class="bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4">
-        <h3 class="text-xs font-extrabold text-darkPop mb-3 flex items-center gap-1">
-          <span>🚀</span> 어떻게 달려왔을까요?
-        </h3>
-        <div class="space-y-3 text-xs border-l-2 border-darkPop pl-4 ml-1">
-          <div class="relative">
-            <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-mint border-2 border-darkPop"></span>
-            <div class="font-extrabold text-darkPop">지금: 디지털 트윈 & 테크 리드</div>
-            <div class="text-[11px] text-slate-500">넥스트 오토메이션 시스템즈 (재미난 프로젝트 총괄 중!)</div>
+      <!-- Career 2: NdotLight -->
+      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sunshine text-darkPop border border-darkPop shadow-pop-sm inline-block mb-1">
+              2026.06 - 2026.09 · 4개월
+            </span>
+            <h3 class="text-sm font-extrabold text-darkPop">NdotLight (엔닷라이트)</h3>
+            <p class="text-xs font-bold text-slate-700">Robotics Simulation Engineer</p>
           </div>
-          <div class="relative">
-            <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-sunshine border-2 border-darkPop"></span>
-            <div class="font-extrabold text-darkPop">초정밀 제어 엔지니어</div>
-            <div class="text-[11px] text-slate-500">정밀모션 테크놀로지 (0.001초 모터 제어 연구)</div>
-          </div>
-          <div class="relative">
-            <span class="absolute -left-[23px] top-0.5 w-3 h-3 rounded-full bg-coral border-2 border-darkPop"></span>
-            <div class="font-extrabold text-darkPop">제어계측공학 졸업</div>
-            <div class="text-[11px] text-slate-500">로봇과 소프트웨어에 흠뻑 빠진 대학 시절</div>
-          </div>
+          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2">
+          <b>Robot Simulation Engineer</b><br>
+          Teleoperation → Synthetic Data → Robot Learning<br>
+          Isaac Sim · Isaac Lab · SimReady · COSMOS · Physical AI
+        </p>
+        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Isaac Sim</span>
+          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Isaac Lab</span>
+          <span class="px-2 py-0.5 bg-indigo-100 rounded-md border border-darkPop">Omniverse</span>
+          <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">SimReady</span>
+          <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">Physical AI</span>
         </div>
       </div>
+
+      <!-- Career 3: CodeLab Academy -->
+      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-lavender text-darkPop border border-darkPop shadow-pop-sm inline-block mb-1">
+              2023.07 - 2026.09 · 3년 3개월
+            </span>
+            <h3 class="text-sm font-extrabold text-darkPop">CodeLab Academy (코드랩 아카데미)</h3>
+            <p class="text-xs font-bold text-slate-700">디지털 트윈 전문가 & K-Digital 인스트럭터 (프리랜서 / 하이브리드)</p>
+          </div>
+          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <div class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2 space-y-1.5">
+          <p>
+            산업 현장에 바로 적용 가능한 디지털 트윈 개발자 양성을 목표로, 실무 중심의 기술 교육 커리큘럼을 설계하고 총괄했습니다.
+          </p>
+          <ul class="list-disc pl-4 space-y-0.5 text-[11px] text-slate-700">
+            <li>Mitsubishi(MELSEC) PLC, Unity 가상 공장, TCP/IP, MQTT, Firebase 연동</li>
+            <li>Universal Robots 기반 로봇 티칭 시스템 실습 프로젝트 도입</li>
+            <li>KOCCA, 유니티 코리아 협력 K-Digital Training 운영</li>
+            <li><b>수료생 취업률 85% 이상, 회차 통합 강의 평점 4.6점 달성</b></li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity3D</span>
+          <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">MELSEC PLC</span>
+          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">MQTT / TCP-IP</span>
+          <span class="px-2 py-0.5 bg-orange-100 rounded-md border border-darkPop">Universal Robots</span>
+        </div>
+      </div>
+
+      <!-- Career 4: Xiilab -->
+      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
+        <div class="flex items-start justify-between gap-2 mb-1.5">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-popPink text-white border border-darkPop shadow-pop-sm inline-block mb-1">
+              2021.12 - 2023.07 · 1년 8개월
+            </span>
+            <h3 class="text-sm font-extrabold text-darkPop">씨이랩 (Xiilab)</h3>
+            <p class="text-xs font-bold text-slate-700">그래픽스팀 리드 소프트웨어 엔지니어 (정규직)</p>
+          </div>
+          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <div class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2 space-y-1.5">
+          <p>
+            AI/ML 학습을 위한 합성 데이터 플랫폼 및 디지털 트윈 솔루션 개발 리딩. 정부 AI Hub 과제 리더로서 Naver LABs, 국방과학연구소(ADD) 협력.
+          </p>
+          <ul class="list-disc pl-4 space-y-0.5 text-[11px] text-slate-700">
+            <li>Unity HDRP 기반 LiDAR, IR, CCTV 다중 센서 시뮬레이션 환경 구축</li>
+            <li>OpenCV 멀티스레드 처리 구조 도입으로 <b>데이터 처리량 30% 이상 개선</b></li>
+            <li>9인 개발·아트 팀 리딩 및 Git 기반 애자일 워크플로우 총괄</li>
+            <li><b>NVIDIA PLM Conference 2023 연사 발표</b> (Omniverse 기반 디지털 트윈 구축 전략)</li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Unity HDRP</span>
+          <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
+          <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">Python / OpenCV</span>
+          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">LiDAR / IR Sim</span>
+        </div>
+      </div>
+
     </div>
 
+    <!-- TAB 3: Highlighted Portfolio Projects -->
+    <div id="tab-projects" class="tab-content hidden space-y-3.5">
+
+      <!-- Project 1: NVIDIA Conference 2023 -->
+      <a href="https://youtu.be/WrpE6T8RTzY" target="_blank" rel="noopener noreferrer" 
+         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-900 overflow-hidden">
+          <img src="https://img.youtube.com/vi/WrpE6T8RTzY/hqdefault.jpg" alt="NVIDIA PLM Conference 2023" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-sunshine border-2 border-darkPop rounded-full text-[10px] font-extrabold text-darkPop shadow-pop-sm">
+            SPEAKER / TALK
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
+            <span>NVIDIA PLM Conference 2023</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </h3>
+          <p class="text-xs text-slate-600 mt-1">
+            NVIDIA Omniverse 기반 개방형 디지털 트윈 구축 전략 발표 세션
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-slate-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Digital Twin</span>
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">Industrial AI</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2: ADD Synthetic Data Simulator -->
+      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-800 overflow-hidden">
+          <img src="assets/add-synthetic-sim.png" alt="AI 합성 데이터 생성 시뮬레이터" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/WrpE6T8RTzY/hqdefault.jpg'">
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-mint text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+            GOV & DEFENSE R&D
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop">AI 합성 데이터 생성 시뮬레이터</h3>
+          <p class="text-xs text-slate-600 mt-1">
+            Unity HDRP 기반 초실사 합성 데이터 파이프라인 · Naver LABs, 국방과학연구소(ADD) 협업 · LiDAR, IR, Segmentation 다중 센서 시뮬레이션
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Unity HDRP</span>
+            <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">OpenCV</span>
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">LiDAR / IR Sim</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Spody Interactive XR -->
+      <a href="https://www.youtube.com/watch?v=Exp1zakQkhQ" target="_blank" rel="noopener noreferrer"
+         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-900 overflow-hidden">
+          <img src="assets/edutech-game.jpg" alt="스포디 XR 교육게임" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://img.youtube.com/vi/Exp1zakQkhQ/hqdefault.jpg'">
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-popPink text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+            130+ 학교 구독 서비스
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
+            <span>스포디(Spody) — 구독형 확장현실 교육게임</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </h3>
+          <p class="text-xs text-slate-600 mt-1">
+            스포츠와 교육을 융합한 인터랙티브 XR 서비스 · Kinect/LiDAR 기반 실시간 모션 인식 및 20종 통합 발달 콘텐츠
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">Interactive XR</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">LiDAR / Kinect</span>
+            <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">Unity 3D</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 4: Robotics Reinforcement Learning (Spot & UR16e) -->
+      <a href="https://www.youtube.com/watch?v=4YsCz5fFfj0" target="_blank" rel="noopener noreferrer"
+         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-900 overflow-hidden">
+          <img src="https://img.youtube.com/vi/4YsCz5fFfj0/hqdefault.jpg" alt="Spot RL Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-bubble text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+            ROBOT LEARNING & RL
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
+            <span>Boston Dynamics Spot & UR16e 강화학습</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </h3>
+          <p class="text-xs text-slate-600 mt-1">
+            Boston Dynamics Spot의 PPO 기반 단계적 커리큘럼 러닝 및 6축 산업용 매니퓰레이터 UR16e 제어 훈련
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-violet-100 rounded-md border border-darkPop">PPO Algorithm</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">ML-Agents</span>
+            <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">Robot Kinematics</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 5: Unity-MELSEC PLC & Universal Robots Digital Twin -->
+      <a href="https://www.youtube.com/watch?v=Z7nRL82oNe8" target="_blank" rel="noopener noreferrer"
+         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-900 overflow-hidden">
+          <img src="https://img.youtube.com/vi/Z7nRL82oNe8/hqdefault.jpg" alt="Unity MELSEC PLC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-mint text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+            FACTORY DIGITAL TWIN
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
+            <span>Unity-MELSEC PLC 실시간 가상공장 연동</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </h3>
+          <p class="text-xs text-slate-600 mt-1">
+            Mitsubishi(MELSEC) PLC와 Unity 3D 가상 설비 실시간 동기화, Realtime DB 연동 및 협동로봇 티칭 시뮬레이터
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">MELSEC PLC</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity Digital Twin</span>
+            <span class="px-2 py-0.5 bg-orange-100 rounded-md border border-darkPop">MQTT / TCP-IP</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 6: Hardware Making (Kinetic Clock & Biped Robot) -->
+      <a href="https://www.instagram.com/p/DUTRhLsCVmj/" target="_blank" rel="noopener noreferrer"
+         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
+        <div class="relative h-36 bg-slate-900 overflow-hidden">
+          <img src="image&video/kineticClock.png" alt="Kinetic Clock" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+              ▶
+            </span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-coral text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+            HARDWARE & 3D PRINTING
+          </span>
+        </div>
+        <div class="p-3.5">
+          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
+            <span>키네틱 7-세그먼트 시계 & 2족 보행 로봇</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </h3>
+          <p class="text-xs text-slate-600 mt-1">
+            3D 프린팅 자체 기구 설계(Fusion 360), Arduino Mega와 30개 SG90 서보 제어 및 디지털 버스 서보 2족 보행 로봇 개발
+          </p>
+          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">3D Printing</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Embedded MCU</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Fusion 360</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- TAB 4: Guestbook (Sticky Notes) -->
     <div id="tab-guestbook" class="tab-content hidden space-y-4">
       <!-- Write Form -->
       <div class="bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4">
         <h3 class="text-sm font-extrabold text-darkPop mb-1 flex items-center gap-1.5">
-          <span>💌</span> 스티커와 함께 한마디 남겨주세요!
+          <span>💌</span> Henry에게 한마디 남겨주세요!
         </h3>
-        <p class="text-xs text-slate-500 mb-3">응원의 말이나 인사, 질문 무엇이든 좋아요 :)</p>
+        <p class="text-xs text-slate-500 mb-3">응원이나 질문, 협업 제안 무엇이든 환영합니다 :)</p>
 
         <form id="guestbookForm" onsubmit="addStickyNote(event)" class="space-y-3">
           <!-- Emoji Picker -->
           <div>
-            <label class="text-[11px] font-bold text-slate-600 block mb-1">내 기분 스티커 고르기</label>
+            <label class="text-[11px] font-bold text-slate-600 block mb-1">스티커 선택</label>
             <div class="flex gap-2" id="emojiSelector">
-              <button type="button" onclick="selectEmoji('🎉')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-yellow-200 shadow-pop-sm">🎉</button>
-              <button type="button" onclick="selectEmoji('☕')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">☕</button>
+              <button type="button" onclick="selectEmoji('⚡')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-yellow-200 shadow-pop-sm">⚡</button>
+              <button type="button" onclick="selectEmoji('🤖')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">🤖</button>
               <button type="button" onclick="selectEmoji('🚀')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">🚀</button>
-              <button type="button" onclick="selectEmoji('⭐')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">⭐</button>
+              <button type="button" onclick="selectEmoji('☕')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">☕</button>
               <button type="button" onclick="selectEmoji('🔥')" class="emoji-btn p-2 text-lg rounded-xl border-2 border-darkPop bg-white shadow-pop-sm">🔥</button>
             </div>
           </div>
 
           <div class="grid grid-cols-2 gap-2">
-            <input type="text" id="guestName" required placeholder="닉네임 / 성함" class="w-full px-3 py-2 text-xs rounded-xl border-2 border-darkPop bg-slate-50 focus:bg-white focus:outline-none shadow-pop-sm font-medium">
-            <input type="text" id="guestContact" placeholder="SNS나 연락처 (선택)" class="w-full px-3 py-2 text-xs rounded-xl border-2 border-darkPop bg-slate-50 focus:bg-white focus:outline-none shadow-pop-sm font-medium">
+            <input type="text" id="guestName" required placeholder="이름 / 닉네임" class="w-full px-3 py-2 text-xs rounded-xl border-2 border-darkPop bg-slate-50 focus:bg-white focus:outline-none shadow-pop-sm font-medium">
+            <input type="text" id="guestContact" placeholder="소속 / 연락처 (선택)" class="w-full px-3 py-2 text-xs rounded-xl border-2 border-darkPop bg-slate-50 focus:bg-white focus:outline-none shadow-pop-sm font-medium">
           </div>
 
           <textarea id="guestMsg" required rows="2" placeholder="따뜻한 한마디를 적어주세요!" class="w-full px-3 py-2 text-xs rounded-xl border-2 border-darkPop bg-slate-50 focus:bg-white focus:outline-none shadow-pop-sm font-medium resize-none"></textarea>
@@ -449,29 +653,32 @@
       <!-- Post-it Notes Board -->
       <div>
         <h4 class="text-xs font-bold text-slate-600 mb-2 flex items-center gap-1">
-          <span>📌</span> 붙여진 포스트잇 방명록
+          <span>📌</span> 방명록 보드
         </h4>
         <div id="stickyBoard" class="grid grid-cols-2 gap-2.5">
-          <!-- Dynamic sticky notes go here -->
+          <!-- Dynamic sticky notes loaded via JS -->
         </div>
       </div>
     </div>
 
-    <footer class="mt-8 text-center text-xs text-slate-400 font-fun">
-      <p>Made with 💛 & Lots of Coffee • 2026</p>
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-500 font-mono">
+      <p>© 2026 Henry Shin (신태욱) · PixelGravity</p>
+      <p class="text-[10px] text-slate-400 mt-1">Bridging Industrial Reality and Digital Intelligence</p>
     </footer>
 
+    <!-- Floating Quick Actions (Mobile-First Bar) -->
     <aside class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-sm bg-white border-2 border-darkPop shadow-pop-lg rounded-full py-2 px-3 flex items-center justify-between z-40">
       <div class="flex items-center gap-2 pl-2">
-        <span class="text-sm animate-wiggle">✨</span>
-        <span class="text-xs font-extrabold text-darkPop">프로필 실시간 연결</span>
+        <span class="text-sm animate-wiggle">⚡</span>
+        <span class="text-xs font-extrabold text-darkPop">Henry Shin 명함</span>
       </div>
       <div class="flex items-center gap-1.5">
         <button onclick="openQrModal()" class="px-3 py-1.5 rounded-full bg-sunshine border-2 border-darkPop shadow-pop-sm text-xs font-bold flex items-center gap-1 active:translate-y-0.5">
           <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
-          <span>QR 공유</span>
+          <span>QR 코드</span>
         </button>
-        <button onclick="fireCuteConfetti(); copyInfo(window.location.href, '프로필 링크가 복사되었어요! 🎉')" class="px-3 py-1.5 rounded-full bg-popPink text-white border-2 border-darkPop shadow-pop-sm text-xs font-bold flex items-center gap-1 active:translate-y-0.5">
+        <button onclick="fireCuteConfetti(); copyInfo(window.location.href, '프로필 주소가 복사되었습니다! 🎉')" class="px-3 py-1.5 rounded-full bg-popPink text-white border-2 border-darkPop shadow-pop-sm text-xs font-bold flex items-center gap-1 active:translate-y-0.5">
           <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
           <span>링크 복사</span>
         </button>
@@ -496,8 +703,8 @@
         <canvas id="qrCanvas" class="w-[180px] h-[180px] rounded-lg"></canvas>
       </div>
 
-      <h4 class="text-sm font-extrabold text-darkPop mb-1">스마트폰으로 찰칵 찍어보세요!</h4>
-      <p class="text-xs text-slate-500 mb-4">언제 어디서든 이 명함을 그대로 열 수 있어요.</p>
+      <h4 class="text-sm font-extrabold text-darkPop mb-1">스마트폰으로 카메라를 비춰보세요!</h4>
+      <p class="text-xs text-slate-500 mb-4">Henry Shin의 디지털 명함 및 포트폴리오로 바로 이동합니다.</p>
 
       <div class="flex gap-2">
         <button onclick="copyInfo(window.location.href, '링크가 복사되었어요!'); closeQrModal();" class="flex-1 py-2 rounded-xl bg-slate-100 border-2 border-darkPop text-xs font-extrabold text-darkPop shadow-pop-sm hover:bg-slate-200">
@@ -507,28 +714,6 @@
           연락처 저장
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- MODAL: Fun Project Details -->
-  <div id="projectModal" class="fixed inset-0 bg-darkPop/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-200">
-    <div class="bg-white border-3 border-darkPop shadow-pop-lg rounded-3xl p-5 w-full max-w-sm text-left transform scale-95 transition-transform duration-200 relative" id="projCard">
-      <button onclick="closeFunModal()" class="absolute top-3 right-3 p-1.5 rounded-full border-2 border-darkPop bg-slate-100 hover:bg-slate-200 shadow-pop-sm text-darkPop">
-        <i data-lucide="x" class="w-4 h-4"></i>
-      </button>
-
-      <div class="text-3xl mb-2" id="modalEmoji">🤖</div>
-      <h3 class="text-base font-extrabold text-darkPop mb-1" id="modalTitle">프로젝트 이름</h3>
-      <p class="text-xs text-slate-600 leading-relaxed mb-3" id="modalDesc">재미난 설명이 들어갑니다.</p>
-
-      <div class="bg-amber-50 border-2 border-darkPop rounded-xl p-2.5 mb-4 shadow-pop-sm">
-        <span class="text-[10px] font-bold text-amber-700 block mb-0.5">사용된 기술 & 비밀 무기</span>
-        <p class="text-xs font-extrabold text-darkPop" id="modalTech">ROS2, Unity, Python</p>
-      </div>
-
-      <button onclick="closeFunModal()" class="w-full py-2 bg-darkPop text-white font-extrabold text-xs rounded-xl shadow-pop-sm">
-        확인 완료! ✨
-      </button>
     </div>
   </div>
 
@@ -596,11 +781,11 @@
       document.body.removeChild(input);
     }
 
-    // Cute Confetti Explosion
+    // Confetti Explosion
     function fireCuteConfetti() {
       if (typeof confetti === 'function') {
         confetti({
-          particleCount: 50,
+          particleCount: 45,
           spread: 60,
           origin: { y: 0.7 },
           colors: ['#FFD166', '#FF6B6B', '#06D6A0', '#118AB2', '#FF85A1']
@@ -617,7 +802,7 @@
       if (typeof QRious !== 'undefined') {
         new QRious({
           element: canvas,
-          value: window.location.href || 'https://litt.ly/minwoo',
+          value: window.location.href || 'https://github.com/henry2craftman',
           size: 220,
           background: '#FFFDF0',
           foreground: '#1E232A',
@@ -640,20 +825,19 @@
       card.classList.remove('scale-100');
     }
 
-    // Download vCard
+    // Download vCard for Henry Shin
     function saveContactVCF() {
       fireCuteConfetti();
       const vcard = [
         "BEGIN:VCARD",
         "VERSION:3.0",
-        "N:김;민우;;;",
-        "FN:김민우 (Minwoo Kim)",
-        "ORG:Next Automation Systems",
-        "TITLE:Software Engineer & Robotics Maker",
-        "TEL;TYPE=CELL,VOICE:010-8921-3420",
-        "EMAIL;TYPE=INTERNET:dev.minwoo.kim@example.com",
-        "URL:" + window.location.href,
-        "NOTE:상상을 현실로 만드는 메이커 김민우 명함 ☕",
+        "N:신;태욱;;;",
+        "FN:신태욱 (Henry Shin)",
+        "ORG:PixelGravity",
+        "TITLE:Industrial Digital Twin & Robotics Simulation Engineer",
+        "EMAIL;TYPE=INTERNET:henry2craftman@gmail.com",
+        "URL:https://www.linkedin.com/in/henry-s-8a1b7b152/",
+        "NOTE:Industrial Digital Twin & Robotics Simulation Engineer | Technology Translator for Physical AI",
         "END:VCARD"
       ].join("\r\n");
 
@@ -661,71 +845,17 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Minwoo_Contact.vcf";
+      a.download = "Henry_Shin_Contact.vcf";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      showToast('연락처 파일(.vcf)이 저장되었어요!', '💾');
+      showToast('Henry의 연락처(.vcf)가 저장되었어요!', '💾');
     }
 
-    // Project Details Data
-    const funProjects = {
-      dt: {
-        emoji: '🤖',
-        title: '가상과 현실을 잇는 디지털 트윈',
-        desc: '실제 현장의 센서와 모터를 3D 가상 공간(Unity)과 0.03초 만에 연결했어요! PC나 모바일에서도 공장 로봇을 실시간으로 감시하고 제어할 수 있는 멋진 시스템입니다.',
-        tech: 'Unity 3D, ROS2, OPC-UA, C#, 실시간 소켓'
-      },
-      hardware: {
-        emoji: '⚡',
-        title: '0.001초(1ms)의 마법! 초정밀 제어',
-        desc: '모터가 눈 깜빡할 틈(1밀리초)마다 오차 없이 회전할 수 있도록 초소형 칩의 펌웨어를 극한으로 튜닝했습니다. 오차는 머리카락 굵기보다 작은 0.02mm!',
-        tech: 'STM32 마이크로칩, Embedded C++, FreeRTOS, CANopen'
-      },
-      ai: {
-        emoji: '✨',
-        title: '고장 나기 전에 알려주는 똑똑한 AI',
-        desc: '기계가 내는 소리와 떨림을 듣고 "곧 베어링에 이상이 생길 것 같아요!"라고 먼저 진단해 주는 인공지능 탐정 프로그램입니다.',
-        tech: 'Python, PyTorch 시계열 분석, FastAPI, Docker'
-      },
-      teaching: {
-        emoji: '📚',
-        title: '누구나 쉽게 배우는 하드웨어 코딩',
-        desc: '초보자도 아두이노와 센서를 가지고 재미있게 로봇을 만들 수 있도록 직접 워크숍을 열고 쉬운 교재를 만들어 공유하고 있어요.',
-        tech: '120명 이상 멘토링 완료, 오픈소스 코드 & 튜토리얼'
-      }
-    };
-
-    function openFunModal(key) {
-      const data = funProjects[key];
-      if (!data) return;
-
-      document.getElementById('modalEmoji').innerText = data.emoji;
-      document.getElementById('modalTitle').innerText = data.title;
-      document.getElementById('modalDesc').innerText = data.desc;
-      document.getElementById('modalTech').innerText = data.tech;
-
-      const modal = document.getElementById('projectModal');
-      const card = document.getElementById('projCard');
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modal.classList.add('opacity-100');
-      card.classList.remove('scale-95');
-      card.classList.add('scale-100');
-    }
-
-    function closeFunModal() {
-      const modal = document.getElementById('projectModal');
-      const card = document.getElementById('projCard');
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      modal.classList.remove('opacity-100');
-      card.classList.add('scale-95');
-      card.classList.remove('scale-100');
-    }
-
-    // Guestbook Post-it Logic (Local Storage Persistent)
-    let selectedSticker = '🎉';
+    // Guestbook Logic (Local Storage Persistent)
+    let selectedSticker = '⚡';
     const noteColors = ['bg-yellow-200', 'bg-pink-200', 'bg-sky-200', 'bg-green-200', 'bg-purple-200'];
 
     function selectEmoji(emoji) {
@@ -742,30 +872,31 @@
     }
 
     const defaultNotes = [
-      { name: "지은", emoji: "☕", msg: "디지털 트윈 프로젝트 진짜 신기해요! 커피챗 기대할게요!", color: "bg-yellow-200", rot: "-2" },
-      { name: "준서 (개발자)", emoji: "🚀", msg: "0.001초 모터 제어라니 멋집니다! 포트폴리오 짱 귀여워요", color: "bg-pink-200", rot: "1.5" },
-      { name: "수현", emoji: "🔥", msg: "항상 응원합니다 화이팅!!", color: "bg-green-200", rot: "-1" }
+      { name: "동료 엔지니어", emoji: "⚡", msg: "판교 디지털 트윈 XR 시뮬레이션 과정 응원합니다!", color: "bg-yellow-200", rot: "-2" },
+      { name: "수강생", emoji: "🤖", msg: "PLC와 유니티 연동 수업 정말 큰 도움 되었습니다!", color: "bg-pink-200", rot: "1.5" },
+      { name: "Physical AI 연구원", emoji: "🚀", msg: "합성 데이터와 Isaac Sim 파이프라인 최고예요!", color: "bg-green-200", rot: "-1" }
     ];
 
     function loadNotes() {
       const board = document.getElementById('stickyBoard');
-      let notes = JSON.parse(localStorage.getItem('guest_notes') || 'null');
+      let notes = JSON.parse(localStorage.getItem('henry_guestbook_notes') || 'null');
       if (!notes) {
         notes = defaultNotes;
-        localStorage.setItem('guest_notes', JSON.stringify(notes));
+        localStorage.setItem('henry_guestbook_notes', JSON.stringify(notes));
       }
 
       board.innerHTML = '';
-      notes.forEach((item) => {
+      notes.forEach(note => {
         const div = document.createElement('div');
-        div.className = `p-3 rounded-2xl border-2 border-darkPop shadow-pop-sm ${item.color} sticker-tag`;
-        div.style.setProperty('--rot', (item.rot || 0) + 'deg');
+        div.className = `p-3 rounded-2xl border-2 border-darkPop shadow-pop-sm ${note.color} flex flex-col justify-between transform rotate-[${note.rot || 0}deg]`;
         div.innerHTML = `
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-base">${item.emoji}</span>
-            <span class="text-[10px] font-extrabold text-slate-700 font-fun">@${item.name}</span>
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold mb-1">
+              <span class="text-darkPop font-extrabold truncate">${escapeHtml(note.name)}</span>
+              <span class="text-sm">${note.emoji || '⚡'}</span>
+            </div>
+            <p class="text-xs text-slate-800 break-words leading-relaxed">${escapeHtml(note.msg)}</p>
           </div>
-          <p class="text-xs font-bold text-darkPop leading-tight">${item.msg}</p>
         `;
         board.appendChild(div);
       });
@@ -780,26 +911,37 @@
       const randomColor = noteColors[Math.floor(Math.random() * noteColors.length)];
       const randomRot = (Math.random() * 4 - 2).toFixed(1);
 
-      const notes = JSON.parse(localStorage.getItem('guest_notes') || '[]');
-      notes.unshift({ name, emoji: selectedSticker, msg, color: randomColor, rot: randomRot });
-      localStorage.setItem('guest_notes', JSON.stringify(notes));
+      const notes = JSON.parse(localStorage.getItem('henry_guestbook_notes') || '[]');
+      notes.unshift({
+        name: name,
+        msg: msg,
+        emoji: selectedSticker,
+        color: randomColor,
+        rot: randomRot
+      });
 
+      localStorage.setItem('henry_guestbook_notes', JSON.stringify(notes.slice(0, 20)));
       loadNotes();
       document.getElementById('guestbookForm').reset();
-      selectEmoji('🎉');
+      selectEmoji('⚡');
       fireCuteConfetti();
-      showToast('포스트잇이 방명록에 딱 붙었어요!', '📌');
+      showToast('따뜻한 포스트잇이 등록되었어요! 📌');
     }
 
-    // Modal background close
+    function escapeHtml(string) {
+      const entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      };
+      return String(string).replace(/[&<>"']/g, s => entityMap[s]);
+    }
+
+    // Initialize on load
     window.addEventListener('DOMContentLoaded', () => {
       loadNotes();
-      document.getElementById('qrModal').addEventListener('click', (e) => {
-        if (e.target.id === 'qrModal') closeQrModal();
-      });
-      document.getElementById('projectModal').addEventListener('click', (e) => {
-        if (e.target.id === 'projectModal') closeFunModal();
-      });
     });
   </script>
 </body>
