@@ -263,15 +263,20 @@
         </div>
       </div>
 
-      <!-- Quick Action Under Card -->
-      <div class="mt-3 flex items-center justify-between text-[11px] font-medium text-slate-600 px-1">
-        <span class="flex items-center gap-1 font-mono">
-          <i data-lucide="phone" class="w-3 h-3 text-mint"></i> 010-8467-1924
+      <!-- Quick Action Under Card (Phone copy & Remember registration) -->
+      <div class="mt-3 flex items-center justify-between gap-1.5 px-1 text-[11px]">
+        <span class="flex items-center gap-1 font-mono font-bold text-slate-700">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-mint"></i> 010-8467-1924
         </span>
-        <button onclick="copyInfo('010-8467-1924', '전화번호가 복사되었습니다! 📞')" class="font-bold text-bubble hover:underline flex items-center gap-0.5">
-          <span>번호 복사</span>
-          <i data-lucide="copy" class="w-3 h-3"></i>
-        </button>
+        <div class="flex items-center gap-1.5">
+          <button onclick="copyInfo('010-8467-1924', '전화번호가 복사되었습니다! 📞')" class="px-2 py-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop font-bold shadow-pop-sm flex items-center gap-1">
+            <i data-lucide="copy" class="w-3 h-3"></i>
+            <span>복사</span>
+          </button>
+          <button onclick="openRememberModal()" class="px-2.5 py-1 rounded-lg border border-darkPop bg-[#1864AB] text-white hover:bg-[#155390] font-extrabold shadow-pop-sm flex items-center gap-1 active:translate-y-0.5 transition-all">
+            <span>💼 리멤버 등록</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -861,6 +866,53 @@
     </div>
   </div>
 
+  <!-- MODAL: Remember App Registration Guide Modal -->
+  <div id="rememberModal" class="fixed inset-0 bg-darkPop/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-white border-3 border-darkPop shadow-pop-lg rounded-3xl p-5 w-full max-w-xs text-left transform scale-95 transition-transform duration-200 relative" id="rememberCard">
+      <button onclick="closeRememberModal()" class="absolute top-3 right-3 p-1.5 rounded-full border-2 border-darkPop bg-slate-100 hover:bg-slate-200 shadow-pop-sm text-darkPop">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-2">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-[#1864AB] text-white font-black text-base shadow-pop-sm">
+          R
+        </span>
+        <div>
+          <h3 class="text-sm font-extrabold text-darkPop">리멤버에 명함 등록</h3>
+          <span class="text-[10px] text-slate-500 font-medium">Remember Business Card</span>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="bg-[#EBF5FB] border-2 border-darkPop rounded-2xl p-3 mb-3 text-xs text-slate-700 space-y-1.5">
+        <p class="font-extrabold text-darkPop flex items-center gap-1">
+          <span>💡</span> 등록 방법 (초간단 2단계):
+        </p>
+        <ol class="list-decimal pl-4 space-y-1.5 text-[11px] leading-snug">
+          <li>아래 <b>[1. 명함 이미지 저장]</b> 버튼을 눌러 앞면 이미지를 앨범에 저장합니다.</li>
+          <li><b>[2. 리멤버 앱 열기]</b>를 눌러 앱 실행 후 <b>[+ 명함 등록] → [앨범에서 가져오기]</b>를 선택하면 AI가 자동으로 명함을 등록합니다!</li>
+        </ol>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2">
+        <a href="image&video/명함/앞면.jpg" download="신태욱_명함_앞면.jpg" class="pop-card w-full py-2 bg-sunshine text-darkPop font-extrabold text-xs rounded-xl border-2 border-darkPop shadow-pop-sm flex items-center justify-center gap-1.5">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>1. 명함 이미지 다운로드</span>
+        </a>
+
+        <button onclick="launchRememberApp()" class="pop-card w-full py-2 bg-[#1864AB] text-white font-extrabold text-xs rounded-xl border-2 border-darkPop shadow-pop-sm flex items-center justify-center gap-1.5 hover:bg-[#155390]">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>2. 리멤버 앱 열기 📲</span>
+        </button>
+
+        <button onclick="closeRememberModal()" class="w-full py-2 bg-darkPop text-white font-extrabold text-xs rounded-xl shadow-pop-sm">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Capsule -->
   <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-white border-2 border-darkPop shadow-pop-lg px-4 py-2 rounded-full text-xs font-extrabold text-darkPop flex items-center gap-2 opacity-0 -translate-y-4 pointer-events-none transition-all duration-200">
     <span id="toastIcon">✨</span>
@@ -1073,6 +1125,51 @@
       if (modal) {
         modal.classList.add('opacity-0', 'pointer-events-none');
         modal.classList.remove('opacity-100');
+      }
+    }
+
+    // Remember App Modal & Launching Logic
+    function openRememberModal() {
+      fireCuteConfetti();
+      const modal = document.getElementById('rememberModal');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        const card = document.getElementById('rememberCard');
+        if (card) {
+          card.classList.remove('scale-95');
+          card.classList.add('scale-100');
+        }
+      }
+    }
+
+    function closeRememberModal() {
+      const modal = document.getElementById('rememberModal');
+      if (modal) {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+      }
+    }
+
+    function launchRememberApp() {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        // Android Intent for Remember app
+        window.location.href = "intent://#Intent;package=kr.co.dramancompany.remember;scheme=remember;end";
+      } else if (isIOS) {
+        // iOS custom scheme with App Store fallback
+        const start = Date.now();
+        window.location.href = "remember://";
+        setTimeout(() => {
+          if (Date.now() - start < 1800) {
+            window.location.href = "https://apps.apple.com/kr/app/remember-business-card/id739097725";
+          }
+        }, 1500);
+      } else {
+        // PC / Web fallback
+        window.open("https://rememberapp.co.kr", "_blank");
       }
     }
 
