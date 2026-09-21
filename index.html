@@ -228,75 +228,6 @@
       </div>
     </section>
 
-    <!-- Real Business Card Section (Front & Back Toggle Viewer) -->
-    <section class="bg-white border-2 border-darkPop shadow-pop-lg rounded-3xl p-4 mb-4 relative">
-      <div class="flex items-center justify-between mb-2.5 px-1">
-        <div class="flex items-center gap-1.5">
-          <span class="text-base">🪪</span>
-          <h2 class="text-xs font-extrabold text-darkPop">실물 명함 (앞/뒷면 확인)</h2>
-        </div>
-        
-        <!-- Front / Back Switch Buttons -->
-        <div class="flex items-center gap-1 bg-slate-100 p-0.5 rounded-full border border-darkPop shadow-pop-sm">
-          <button onclick="showCardFace('front')" id="btnCardFront" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sunshine text-darkPop transition-all">
-            앞면
-          </button>
-          <button onclick="showCardFace('back')" id="btnCardBack" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold text-slate-500 hover:text-darkPop transition-all">
-            뒷면
-          </button>
-        </div>
-      </div>
-
-      <!-- Business Card Display Frame -->
-      <div class="w-full cursor-pointer select-none" onclick="toggleCardFace()" title="클릭해서 앞/뒷면 전환">
-        <div class="relative w-full aspect-[16/9] rounded-2xl border-2 border-darkPop shadow-pop overflow-hidden bg-slate-950">
-          
-          <!-- Front Side (앞면.jpg) -->
-          <div id="cardViewFront" class="absolute inset-0 w-full h-full transition-opacity duration-300 opacity-100 z-10 bg-black">
-            <img 
-              src="image&video/명함/앞면.jpg" 
-              alt="Henry Shin 실물 명함 앞면" 
-              class="w-full h-full object-cover"
-            >
-            <div class="absolute bottom-2.5 right-2.5 flex items-center gap-1 bg-black/75 backdrop-blur-sm text-white px-2 py-1 rounded-lg border border-white/20 text-[10px] font-mono">
-              <span>앞면</span>
-              <span class="text-sunshine font-bold">· 터치해서 뒷면 보기 🔄</span>
-            </div>
-          </div>
-
-          <!-- Back Side (뒷면.jpg) -->
-          <div id="cardViewBack" class="absolute inset-0 w-full h-full transition-opacity duration-300 opacity-0 pointer-events-none z-0 bg-black">
-            <img 
-              src="image&video/명함/뒷면.jpg" 
-              alt="Henry Shin 실물 명함 뒷면 (이력 및 기술 다이어그램)" 
-              class="w-full h-full object-cover"
-            >
-            <div class="absolute bottom-2.5 right-2.5 flex items-center gap-1 bg-black/75 backdrop-blur-sm text-white px-2 py-1 rounded-lg border border-white/20 text-[10px] font-mono">
-              <span>뒷면</span>
-              <span class="text-sunshine font-bold">· 터치해서 앞면 보기 🔄</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Quick Action Under Card (Direct Phone Call & Remember registration) -->
-      <div class="mt-3 flex items-center justify-between gap-1.5 px-1 text-[11px]">
-        <a href="tel:010-8467-1924" class="flex items-center gap-1 font-mono font-extrabold text-slate-800 hover:text-bubble transition-colors" title="전화앱으로 바로 연결">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-mint"></i> 010-8467-1924
-        </a>
-        <div class="flex items-center gap-1.5">
-          <button onclick="copyInfo('010-8467-1924', '전화번호가 복사되었습니다! 📞')" class="px-2 py-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop font-bold shadow-pop-sm flex items-center gap-1">
-            <i data-lucide="copy" class="w-3 h-3"></i>
-            <span>복사</span>
-          </button>
-          <button onclick="openRememberModal()" class="px-2.5 py-1 rounded-lg border border-darkPop bg-[#1864AB] text-white hover:bg-[#155390] font-extrabold shadow-pop-sm flex items-center gap-1 active:translate-y-0.5 transition-all">
-            <span>💼 리멤버 등록</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
     <!-- Navigation Tabs (Links, Career, Projects, Guestbook) -->
     <nav class="flex items-center justify-between gap-1 p-1 bg-white border-2 border-darkPop shadow-pop rounded-2xl mb-4 text-xs font-bold">
       <button onclick="changeTab('links')" id="btn-tab-links" class="tab-target flex-1 py-2 rounded-xl text-center transition-all bg-darkPop text-white shadow-pop-sm">
@@ -869,53 +800,6 @@
     </div>
   </div>
 
-  <!-- MODAL: Remember App Registration Guide Modal -->
-  <div id="rememberModal" class="fixed inset-0 bg-darkPop/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none transition-opacity duration-200">
-    <div class="bg-white border-3 border-darkPop shadow-pop-lg rounded-3xl p-5 w-full max-w-xs text-left transform scale-95 transition-transform duration-200 relative" id="rememberCard">
-      <button onclick="closeRememberModal()" class="absolute top-3 right-3 p-1.5 rounded-full border-2 border-darkPop bg-slate-100 hover:bg-slate-200 shadow-pop-sm text-darkPop">
-        <i data-lucide="x" class="w-4 h-4"></i>
-      </button>
-
-      <div class="flex items-center gap-2 mb-2">
-        <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-[#1864AB] text-white font-black text-base shadow-pop-sm">
-          R
-        </span>
-        <div>
-          <h3 class="text-sm font-extrabold text-darkPop">리멤버에 명함 등록</h3>
-          <span class="text-[10px] text-slate-500 font-medium">Remember Business Card</span>
-        </div>
-      </div>
-
-      <!-- Steps -->
-      <div class="bg-[#EBF5FB] border-2 border-darkPop rounded-2xl p-3 mb-3 text-xs text-slate-700 space-y-1.5">
-        <p class="font-extrabold text-darkPop flex items-center gap-1">
-          <span>💡</span> 등록 방법 (초간단 2단계):
-        </p>
-        <ol class="list-decimal pl-4 space-y-1.5 text-[11px] leading-snug">
-          <li>아래 <b>[1. 명함 이미지 저장]</b> 버튼을 눌러 앞면 이미지를 앨범에 저장합니다.</li>
-          <li><b>[2. 리멤버 앱 열기]</b>를 눌러 앱 실행 후 <b>[+ 명함 등록] → [앨범에서 가져오기]</b>를 선택하면 AI가 자동으로 명함을 등록합니다!</li>
-        </ol>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="space-y-2">
-        <a href="image&video/명함/앞면.jpg" download="신태욱_명함_앞면.jpg" class="pop-card w-full py-2 bg-sunshine text-darkPop font-extrabold text-xs rounded-xl border-2 border-darkPop shadow-pop-sm flex items-center justify-center gap-1.5">
-          <i data-lucide="download" class="w-3.5 h-3.5"></i>
-          <span>1. 명함 이미지 다운로드</span>
-        </a>
-
-        <button onclick="launchRememberApp()" class="pop-card w-full py-2 bg-[#1864AB] text-white font-extrabold text-xs rounded-xl border-2 border-darkPop shadow-pop-sm flex items-center justify-center gap-1.5 hover:bg-[#155390]">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          <span>2. 리멤버 앱 열기 📲</span>
-        </button>
-
-        <button onclick="closeRememberModal()" class="w-full py-2 bg-darkPop text-white font-extrabold text-xs rounded-xl shadow-pop-sm">
-          닫기
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- Toast Notification Capsule -->
   <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-white border-2 border-darkPop shadow-pop-lg px-4 py-2 rounded-full text-xs font-extrabold text-darkPop flex items-center gap-2 opacity-0 -translate-y-4 pointer-events-none transition-all duration-200">
     <span id="toastIcon">✨</span>
@@ -925,55 +809,6 @@
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Business Card Front/Back Viewer Logic
-    let currentCardFace = 'front';
-
-    function toggleCardFace() {
-      showCardFace(currentCardFace === 'front' ? 'back' : 'front');
-    }
-
-    function showCardFace(face) {
-      currentCardFace = face;
-      const front = document.getElementById('cardViewFront');
-      const back = document.getElementById('cardViewBack');
-      const btnFront = document.getElementById('btnCardFront');
-      const btnBack = document.getElementById('btnCardBack');
-
-      if (face === 'back') {
-        if (front) {
-          front.classList.remove('opacity-100', 'z-10');
-          front.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-        }
-        if (back) {
-          back.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-          back.classList.add('opacity-100', 'z-10');
-        }
-        if (btnFront) {
-          btnFront.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold text-slate-500 hover:text-darkPop transition-all';
-        }
-        if (btnBack) {
-          btnBack.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sunshine text-darkPop transition-all';
-        }
-        showToast('명함 뒷면(주요 이력 & 기술스택)입니다!', '🪪');
-      } else {
-        if (front) {
-          front.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
-          front.classList.add('opacity-100', 'z-10');
-        }
-        if (back) {
-          back.classList.remove('opacity-100', 'z-10');
-          back.classList.add('opacity-0', 'pointer-events-none', 'z-0');
-        }
-        if (btnFront) {
-          btnFront.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sunshine text-darkPop transition-all';
-        }
-        if (btnBack) {
-          btnBack.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-bold text-slate-500 hover:text-darkPop transition-all';
-        }
-        showToast('명함 앞면입니다!', '🪪');
-      }
-    }
 
     // Tab Switching Logic
     function changeTab(target) {
@@ -1080,51 +915,6 @@
       setTimeout(() => {
         window.location.href = "tel:010-8467-1924";
       }, 250);
-    }
-
-    // Remember App Modal & Launching Logic
-    function openRememberModal() {
-      fireCuteConfetti();
-      const modal = document.getElementById('rememberModal');
-      if (modal) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        modal.classList.add('opacity-100');
-        const card = document.getElementById('rememberCard');
-        if (card) {
-          card.classList.remove('scale-95');
-          card.classList.add('scale-100');
-        }
-      }
-    }
-
-    function closeRememberModal() {
-      const modal = document.getElementById('rememberModal');
-      if (modal) {
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        modal.classList.remove('opacity-100');
-      }
-    }
-
-    function launchRememberApp() {
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-      if (isAndroid) {
-        // Android Intent for Remember app
-        window.location.href = "intent://#Intent;package=kr.co.dramancompany.remember;scheme=remember;end";
-      } else if (isIOS) {
-        // iOS custom scheme with App Store fallback
-        const start = Date.now();
-        window.location.href = "remember://";
-        setTimeout(() => {
-          if (Date.now() - start < 1800) {
-            window.location.href = "https://apps.apple.com/kr/app/remember-business-card/id739097725";
-          }
-        }, 1500);
-      } else {
-        // PC / Web fallback
-        window.open("https://rememberapp.co.kr", "_blank");
-      }
     }
 
     // Guestbook Logic (Local Storage Persistent with Admin Protection)
