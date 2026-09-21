@@ -734,13 +734,28 @@
           <h4 class="text-xs font-bold text-slate-600 flex items-center gap-1">
             <span>📌</span> 방명록 보드
           </h4>
-          <div class="flex items-center gap-1.5 text-[10px]">
-            <button onclick="clearAllNotes()" class="px-2 py-0.5 rounded-lg border border-slate-300 bg-white text-slate-500 hover:text-coral hover:border-coral transition-colors" title="모든 방명록 삭제">
-              전체 비우기
+          
+          <!-- Admin Authentication Controls -->
+          <div id="adminGuestbookControls" class="flex items-center gap-1 text-[10px]">
+            <button onclick="toggleAdminGuestbook()" id="btnAdminUnlock" class="px-2 py-0.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-400 hover:text-darkPop hover:border-darkPop transition-colors flex items-center gap-1" title="관리자 전용 삭제 모드">
+              <i data-lucide="lock" class="w-3 h-3"></i>
+              <span>관리자</span>
             </button>
-            <button onclick="resetDefaultNotes()" class="px-2 py-0.5 rounded-lg border border-slate-300 bg-white text-slate-500 hover:text-bubble hover:border-bubble transition-colors" title="기본 방명록 불러오기">
-              기본값 복원
-            </button>
+            
+            <div id="adminActionGroup" class="hidden flex items-center gap-1">
+              <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-bold border border-amber-300 flex items-center gap-0.5">
+                <i data-lucide="unlock" class="w-2.5 h-2.5"></i> 관리중
+              </span>
+              <button onclick="clearAllNotes()" class="px-1.5 py-0.5 rounded border border-rose-200 bg-rose-50 text-rose-600 hover:bg-rose-100 transition-colors">
+                비우기
+              </button>
+              <button onclick="resetDefaultNotes()" class="px-1.5 py-0.5 rounded border border-slate-300 bg-white text-slate-600 hover:bg-slate-100">
+                복원
+              </button>
+              <button onclick="exitAdminGuestbook()" class="px-1.5 py-0.5 rounded border border-slate-300 bg-white text-slate-600 hover:bg-slate-100">
+                종료
+              </button>
+            </div>
           </div>
         </div>
         <div id="stickyBoard" class="grid grid-cols-2 gap-2.5">
@@ -1021,9 +1036,48 @@
       }
     }
 
-    // Guestbook Logic (Local Storage Persistent)
+    // Guestbook Logic (Local Storage Persistent with Admin Protection)
     let selectedSticker = '⚡';
     const noteColors = ['bg-yellow-200', 'bg-pink-200', 'bg-sky-200', 'bg-green-200', 'bg-purple-200'];
+    let isAdminGuestbook = false;
+    const ADMIN_PIN = '1924'; // Henry의 전화번호 뒷자리
+
+    function toggleAdminGuestbook() {
+      if (!isAdminGuestbook) {
+        const input = prompt('관리자 비밀번호(4자리)를 입력하세요:');
+        if (input === null) return;
+        if (input.trim() === ADMIN_PIN) {
+          isAdminGuestbook = true;
+          updateAdminUI();
+          loadNotes();
+          showToast('관리자 모드가 켜졌습니다. 포스트잇을 삭제할 수 있습니다.', '🔓');
+        } else {
+          showToast('비밀번호가 일치하지 않습니다.', '🔒');
+        }
+      } else {
+        exitAdminGuestbook();
+      }
+    }
+
+    function exitAdminGuestbook() {
+      isAdminGuestbook = false;
+      updateAdminUI();
+      loadNotes();
+      showToast('관리자 모드가 종료되었습니다.', '🔒');
+    }
+
+    function updateAdminUI() {
+      const btnUnlock = document.getElementById('btnAdminUnlock');
+      const actionGroup = document.getElementById('adminActionGroup');
+      if (isAdminGuestbook) {
+        if (btnUnlock) btnUnlock.classList.add('hidden');
+        if (actionGroup) actionGroup.classList.remove('hidden');
+      } else {
+        if (btnUnlock) btnUnlock.classList.remove('hidden');
+        if (actionGroup) actionGroup.classList.add('hidden');
+      }
+      lucide.createIcons();
+    }
 
     function selectEmoji(emoji) {
       selectedSticker = emoji;
@@ -1065,6 +1119,14 @@
       notes.forEach((note, idx) => {
         const div = document.createElement('div');
         div.className = `p-3 rounded-2xl border-2 border-darkPop shadow-pop-sm ${note.color || 'bg-yellow-200'} flex flex-col justify-between transform rotate-[${note.rot || 0}deg] relative group`;
+        
+        // Delete button is ONLY rendered if admin mode is active
+        const deleteBtnHtml = isAdminGuestbook ? `
+          <button onclick="deleteStickyNote(${idx})" class="text-rose-500 hover:text-rose-700 hover:bg-white/80 transition-colors p-1 rounded-lg border border-darkPop bg-white shadow-pop-sm" title="이 포스트잇 삭제">
+            <i data-lucide="trash-2" class="w-3 h-3"></i>
+          </button>
+        ` : '';
+
         div.innerHTML = `
           <div>
             <div class="flex items-center justify-between text-xs font-bold mb-1">
@@ -1072,9 +1134,7 @@
                 <span class="text-sm shrink-0">${note.emoji || '⚡'}</span>
                 <span class="text-darkPop font-extrabold truncate text-[11px]">${escapeHtml(note.name)}</span>
               </div>
-              <button onclick="deleteStickyNote(${idx})" class="text-slate-400 hover:text-coral transition-colors p-0.5 rounded" title="이 포스트잇 삭제">
-                <i data-lucide="x" class="w-3.5 h-3.5"></i>
-              </button>
+              ${deleteBtnHtml}
             </div>
             <p class="text-xs text-slate-800 break-words leading-relaxed">${escapeHtml(note.msg)}</p>
           </div>
@@ -1085,6 +1145,10 @@
     }
 
     function deleteStickyNote(index) {
+      if (!isAdminGuestbook) {
+        showToast('관리자만 삭제할 수 있습니다.', '🔒');
+        return;
+      }
       const saved = localStorage.getItem('henry_guestbook_notes');
       let notes = saved !== null ? JSON.parse(saved) : [...defaultNotes];
       notes.splice(index, 1);
@@ -1094,6 +1158,10 @@
     }
 
     function clearAllNotes() {
+      if (!isAdminGuestbook) {
+        showToast('관리자만 비울 수 있습니다.', '🔒');
+        return;
+      }
       if (confirm('방명록을 모두 비우시겠습니까?')) {
         localStorage.setItem('henry_guestbook_notes', JSON.stringify([]));
         loadNotes();
@@ -1102,6 +1170,10 @@
     }
 
     function resetDefaultNotes() {
+      if (!isAdminGuestbook) {
+        showToast('관리자만 복원할 수 있습니다.', '🔒');
+        return;
+      }
       localStorage.setItem('henry_guestbook_notes', JSON.stringify(defaultNotes));
       loadNotes();
       showToast('기본 예시 방명록으로 복원되었습니다!', '✨');
