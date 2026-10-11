@@ -171,13 +171,26 @@
 
         <!-- Name & Catchy Tagline -->
         <h1 class="text-2xl font-extrabold text-darkPop flex items-center gap-1.5 mb-1">
-          Henry Shin <span class="text-xs font-bold text-slate-500 font-mono bg-slate-100 px-2 py-0.5 rounded-full border border-darkPop">@korean.henry</span>
+          신태욱 <span class="text-xs font-bold text-slate-500 font-mono bg-slate-100 px-2 py-0.5 rounded-full border border-darkPop">Henry Shin</span>
         </h1>
         
-        <p class="text-xs font-extrabold text-slate-800 mb-3 bg-sunshine/40 px-3 py-1.5 rounded-2xl border-2 border-darkPop leading-relaxed">
+        <p class="text-xs font-extrabold text-slate-800 mb-2 bg-sunshine/40 px-3 py-1.5 rounded-2xl border-2 border-darkPop leading-relaxed">
           Industrial Digital Twin & Robotics Simulation Engineer<br>
           <span class="text-slate-600 font-bold">Technology Translator for Physical AI</span>
         </p>
+
+        <!-- Domain Expertise Badges -->
+        <div class="flex items-center justify-center gap-1.5 mb-3 flex-wrap">
+          <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-darkPop text-white border border-darkPop shadow-pop-sm">
+            ⚡ Physical AI Specialist
+          </span>
+          <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 border border-darkPop shadow-pop-sm">
+            🏭 Industrial Digital Twin
+          </span>
+          <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-darkPop shadow-pop-sm">
+            🎙️ Tech Instructor
+          </span>
+        </div>
 
         <!-- Live Status Bubble: 교육 및 최신 활동 -->
         <div class="w-full bg-[#F6F8FA] border-2 border-darkPop rounded-2xl p-3 text-left shadow-pop-sm relative">
@@ -227,7 +240,7 @@
       </div>
     </section>
 
-    <!-- Navigation Tabs (Links, Career, Projects, Guestbook) -->
+    <!-- Navigation Tabs (Links, Career, Insights, Guestbook) -->
     <nav class="flex items-center justify-between gap-1 p-1 bg-white border-2 border-darkPop shadow-pop rounded-2xl mb-4 text-xs font-bold">
       <button onclick="changeTab('links')" id="btn-tab-links" class="tab-target flex-1 py-2 rounded-xl text-center transition-all bg-darkPop text-white shadow-pop-sm">
         🚀 링크
@@ -235,8 +248,8 @@
       <button onclick="changeTab('career')" id="btn-tab-career" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
         💼 주요 경력
       </button>
-      <button onclick="changeTab('projects')" id="btn-tab-projects" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
-        🛠️ 프로젝트
+      <button onclick="changeTab('insights')" id="btn-tab-insights" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
+        💡 인사이트
       </button>
       <button onclick="changeTab('guestbook')" id="btn-tab-guestbook" class="tab-target flex-1 py-2 rounded-xl text-center transition-all text-slate-600 hover:text-darkPop">
         💌 방명록
@@ -370,304 +383,702 @@
     </div>
 
     <!-- TAB 2: Career / Experience -->
-    <div id="tab-career" class="tab-content hidden space-y-3.5">
+    <div id="tab-career" class="tab-content hidden space-y-3">
 
-      <!-- Career 1: PixelGravity -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          <div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-mint text-white border border-darkPop shadow-pop-sm inline-block mb-1">
-              CURRENT · 2026.09 - 현재
-            </span>
-            <h3 class="text-sm font-extrabold text-darkPop">PixelGravity</h3>
-            <p class="text-xs font-bold text-slate-700">Self-employed · 대한민국 서울</p>
+      <!-- Career Track Record Dashboard -->
+      <div class="bg-gradient-to-br from-white via-creamy to-sunshine/20 border-2 border-darkPop shadow-pop rounded-2xl p-3.5">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-1.5">
+            <span class="text-base">🏆</span>
+            <h2 class="text-xs font-black text-darkPop uppercase tracking-wider font-mono">TRACK RECORD</h2>
           </div>
-          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
+          <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-darkPop text-white shadow-pop-sm">
+            R&D × LECTURE
+          </span>
         </div>
-        <p class="text-xs font-bold text-bubble mb-2">
-          Industrial Digital Twin & Robotics Simulation Engineer | Technology Translator for Physical AI
+        
+        <!-- Key Track Record Grid -->
+        <div class="grid grid-cols-2 gap-2 text-left mb-2.5">
+          <div class="bg-white p-2.5 rounded-xl border border-darkPop shadow-pop-sm">
+            <div class="flex items-center gap-1 text-[11px] font-bold text-blue-700 mb-0.5">
+              <span>🏢</span> 산업체 R&D 트랙
+            </div>
+            <div class="text-xs font-black text-darkPop leading-snug">
+              로보틱스 · 비전 · 팀 리드
+            </div>
+            <p class="text-[10px] text-slate-500 mt-1">국방/AI Hub 과제 리딩 및 NVIDIA PLM 연사</p>
+          </div>
+
+          <div class="bg-white p-2.5 rounded-xl border border-darkPop shadow-pop-sm">
+            <div class="flex items-center gap-1 text-[11px] font-bold text-emerald-700 mb-0.5">
+              <span>🎓</span> 테크 교육 트랙
+            </div>
+            <div class="text-xs font-black text-darkPop leading-snug">
+              신기술 전문 강의 & 멘토링
+            </div>
+            <p class="text-[10px] text-slate-500 mt-1">패스트캠퍼스 본강의 · 판교 캠퍼스 · KDT 전담</p>
+          </div>
+        </div>
+
+        <!-- Career Philosophy Quote -->
+        <p class="text-[11px] text-slate-700 bg-white/90 p-2 rounded-xl border border-darkPop/60 leading-relaxed font-medium">
+          "이론에 머물지 않는 현업 R&D 엔지니어링과 현장에 갇히지 않는 전문 테크 강의를 결합하여, 
+          <b>제조 현장과 로봇을 Physical AI 시대로 잇는 기술 브릿지</b> 역할을 수행합니다."
         </p>
-        <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-          "PixelGravity bridges industrial reality and digital intelligence, helping manufacturers prepare their processes, data, and robots for Physical AI."
-        </p>
-        <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Physical AI</span>
-          <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">Digital Twin</span>
-          <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">Robotics</span>
+      </div>
+
+      <!-- Core Competencies Section -->
+      <div class="bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5">
+        <div class="flex items-center justify-between mb-2.5">
+          <h3 class="text-xs font-black text-darkPop flex items-center gap-1.5">
+            <span>⚡</span> 핵심 역량 및 강의 가능 분야
+          </h3>
+          <span class="text-[10px] font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full border border-darkPop">CORE 4</span>
+        </div>
+
+        <div class="grid grid-cols-1 gap-1.5 text-xs">
+          <!-- Competency 1 -->
+          <div class="p-2 rounded-xl bg-[#FFF9ED] border border-darkPop flex items-start gap-2">
+            <span class="text-base leading-none mt-0.5">🌐</span>
+            <div>
+              <span class="font-extrabold text-darkPop block text-[11px]">Physical AI & Digital Twin</span>
+              <p class="text-[10px] text-slate-600 leading-tight mt-0.5">
+                NVIDIA Omniverse 기반 로봇 제어 환경 구축, 스마트팩토리 가상공장 설계, 고정밀 합성 데이터셋 생성
+              </p>
+            </div>
+          </div>
+
+          <!-- Competency 2 -->
+          <div class="p-2 rounded-xl bg-[#E8EAFF] border border-darkPop flex items-start gap-2">
+            <span class="text-base leading-none mt-0.5">🥽</span>
+            <div>
+              <span class="font-extrabold text-darkPop block text-[11px]">Unity XR & 실감형 시뮬레이션</span>
+              <p class="text-[10px] text-slate-600 leading-tight mt-0.5">
+                Unity 3D 기반 인터랙티브 시스템 아키텍처, VR/AR/MR 실감형 시뮬레이션 파이프라인
+              </p>
+            </div>
+          </div>
+
+          <!-- Competency 3 -->
+          <div class="p-2 rounded-xl bg-[#E8F8F5] border border-darkPop flex items-start gap-2">
+            <span class="text-base leading-none mt-0.5">🦾</span>
+            <div>
+              <span class="font-extrabold text-darkPop block text-[11px]">로보틱스 & 머신비전</span>
+              <p class="text-[10px] text-slate-600 leading-tight mt-0.5">
+                로봇 기구학 시뮬레이션, 산업용 머신비전 검사 소프트웨어 개발 및 자동화 시스템 연동
+              </p>
+            </div>
+          </div>
+
+          <!-- Competency 4 -->
+          <div class="p-2 rounded-xl bg-[#FFE8EE] border border-darkPop flex items-start gap-2">
+            <span class="text-base leading-none mt-0.5">👨‍🏫</span>
+            <div>
+              <span class="font-extrabold text-darkPop block text-[11px]">전문 교육 & 프로젝트 멘토링</span>
+              <p class="text-[10px] text-slate-600 leading-tight mt-0.5">
+                KDT 장기 부트캠프 전담 운영 노하우, 재직자 단기 특화 과정, 실무 밀착형 포트폴리오 코칭
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Career 2: NdotLight -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          <div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sunshine text-darkPop border border-darkPop shadow-pop-sm inline-block mb-1">
-              2026.06 - 2026.09 · 4개월
-            </span>
-            <h3 class="text-sm font-extrabold text-darkPop">NdotLight (엔닷라이트)</h3>
-            <p class="text-xs font-bold text-slate-700">Robotics Simulation Engineer</p>
-          </div>
-          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-        <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2">
-          <b>Robot Simulation Engineer</b><br>
-          Teleoperation → Synthetic Data → Robot Learning<br>
-          Isaac Sim · Isaac Lab · SimReady · COSMOS · Physical AI
-        </p>
-        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Isaac Sim</span>
-          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Isaac Lab</span>
-          <span class="px-2 py-0.5 bg-indigo-100 rounded-md border border-darkPop">Omniverse</span>
-          <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">SimReady</span>
-          <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">Physical AI</span>
-        </div>
+      <!-- Career Sub-Filter Buttons -->
+      <div class="flex items-center gap-1.5 p-1 bg-white border-2 border-darkPop shadow-pop-sm rounded-xl text-xs font-bold">
+        <button onclick="filterCareer('all')" id="filter-btn-all" class="career-filter-btn flex-1 py-1 rounded-lg text-center transition-all bg-darkPop text-white shadow-pop-sm">
+          전체 (11)
+        </button>
+        <button onclick="filterCareer('industry')" id="filter-btn-industry" class="career-filter-btn flex-1 py-1 rounded-lg text-center transition-all text-slate-600 hover:text-darkPop">
+          🏢 산업체 R&D (5)
+        </button>
+        <button onclick="filterCareer('education')" id="filter-btn-education" class="career-filter-btn flex-1 py-1 rounded-lg text-center transition-all text-slate-600 hover:text-darkPop">
+          🎓 테크 교육 (6)
+        </button>
       </div>
 
-      <!-- Career 3: CodeLab Academy -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          <div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-lavender text-darkPop border border-darkPop shadow-pop-sm inline-block mb-1">
-              2023.07 - 2026.09 · 3년 3개월
-            </span>
-            <h3 class="text-sm font-extrabold text-darkPop">CodeLab Academy (코드랩 아카데미)</h3>
-            <p class="text-xs font-bold text-slate-700">디지털 트윈 전문가 & K-Digital 인스트럭터 (프리랜서 / 하이브리드)</p>
+      <!-- CAREER ITEMS CONTAINER -->
+      <div class="space-y-2.5" id="careerItemsContainer">
+
+        <!-- ==================== 1. 산업체 실무 경력 ==================== -->
+
+        <!-- Industry 1: PixelGravity -->
+        <div class="career-item career-industry pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-mint text-white border border-darkPop shadow-pop-sm">
+                  CURRENT
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">
+                  Self-employed
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">PixelGravity</h3>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
           </div>
-          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-        <div class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2 space-y-1.5">
-          <p>
-            산업 현장에 바로 적용 가능한 디지털 트윈 개발자 양성을 목표로, 실무 중심의 기술 교육 커리큘럼을 설계하고 총괄했습니다.
+          <p class="text-xs font-bold text-bubble mb-1">
+            Industrial Digital Twin & Robotics Simulation Engineer
           </p>
-          <ul class="list-disc pl-4 space-y-0.5 text-[11px] text-slate-700">
-            <li>Mitsubishi(MELSEC) PLC, Unity 가상 공장, TCP/IP, MQTT, Firebase 연동</li>
-            <li>Universal Robots 기반 로봇 티칭 시스템 실습 프로젝트 도입</li>
-            <li>KOCCA, 유니티 코리아 협력 K-Digital Training 운영</li>
-            <li><b>수료생 취업률 85% 이상, 회차 통합 강의 평점 4.6점 달성</b></li>
-          </ul>
-        </div>
-        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity3D</span>
-          <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">MELSEC PLC</span>
-          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">MQTT / TCP-IP</span>
-          <span class="px-2 py-0.5 bg-orange-100 rounded-md border border-darkPop">Universal Robots</span>
-        </div>
-      </div>
-
-      <!-- Career 4: Xiilab -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-4 relative">
-        <div class="flex items-start justify-between gap-2 mb-1.5">
-          <div>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-popPink text-white border border-darkPop shadow-pop-sm inline-block mb-1">
-              2021.12 - 2023.07 · 1년 8개월
-            </span>
-            <h3 class="text-sm font-extrabold text-darkPop">씨이랩 (Xiilab)</h3>
-            <p class="text-xs font-bold text-slate-700">그래픽스팀 리드 소프트웨어 엔지니어 (정규직)</p>
-          </div>
-          <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1.5 rounded-xl border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-        <div class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-200 mb-2 space-y-1.5">
-          <p>
-            AI/ML 학습을 위한 합성 데이터 플랫폼 및 디지털 트윈 솔루션 개발 리딩. 정부 AI Hub 과제 리더로서 Naver LABs, 국방과학연구소(ADD) 협력.
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            제조 공정, 데이터, 로봇을 Physical AI 시대로 전환하는 시뮬레이션 환경 구축 및 기술 컨설팅
           </p>
-          <ul class="list-disc pl-4 space-y-0.5 text-[11px] text-slate-700">
-            <li>Unity HDRP 기반 LiDAR, IR, CCTV 다중 센서 시뮬레이션 환경 구축</li>
-            <li>OpenCV 멀티스레드 처리 구조 도입으로 <b>데이터 처리량 30% 이상 개선</b></li>
-            <li>9인 개발·아트 팀 리딩 및 Git 기반 애자일 워크플로우 총괄</li>
-            <li><b>NVIDIA PLM Conference 2023 연사 발표</b> (Omniverse 기반 디지털 트윈 구축 전략)</li>
-          </ul>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Physical AI</span>
+            <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">Digital Twin</span>
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">Robotics</span>
+          </div>
         </div>
-        <div class="flex flex-wrap gap-1 text-[10px] font-bold">
-          <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Unity HDRP</span>
-          <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
-          <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">Python / OpenCV</span>
-          <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">LiDAR / IR Sim</span>
+
+        <!-- Industry 2: 엔닷라이트 -->
+        <div class="career-item career-industry pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-sunshine text-darkPop border border-darkPop shadow-pop-sm">
+                  엔지니어
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">
+                  로보틱스 실무
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">엔닷라이트 (NdotLight)</h3>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <p class="text-xs font-bold text-slate-700 mb-1">
+            Robotics Simulation Engineer
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            3D CAD/메시 기반 로봇 물리 시뮬레이션 및 Isaac Sim / Isaac Lab 기반 로봇 제어 환경 구축
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Isaac Sim</span>
+            <span class="px-2 py-0.5 bg-indigo-100 rounded-md border border-darkPop">Omniverse</span>
+            <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">Robot Learning</span>
+          </div>
         </div>
+
+        <!-- Industry 3: Xiilab -->
+        <div class="career-item career-industry pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-popPink text-white border border-darkPop shadow-pop-sm">
+                  Graphics Team 팀장
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">
+                  R&D 리딩
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">Xiilab (씨이랩)</h3>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <p class="text-xs font-bold text-slate-700 mb-1">
+            Graphics Team Lead (합성 데이터 & 디지털 트윈)
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            3D 그래픽스 기반 합성 데이터(Synthetic Data) 생성 파이프라인 총괄, AI Hub 과제 리딩 및 NVIDIA PLM Conference 2023 연사 발표
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Synthetic Data</span>
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity HDRP</span>
+          </div>
+        </div>
+
+        <!-- Industry 4: VVR -->
+        <div class="career-item career-industry pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-900 border border-darkPop shadow-pop-sm">
+                  선임연구원
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">
+                  XR 실무
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">VVR</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-slate-700 mb-1">
+            Senior Research Engineer
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            VR/XR 인터랙티브 시뮬레이션 솔루션 개발 및 다중 사용자 실감형 소프트웨어 연구개발
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-indigo-100 rounded-md border border-darkPop">VR / XR</span>
+            <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">실감형 시뮬레이션</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">인터랙티브 엔진</span>
+          </div>
+        </div>
+
+        <!-- Industry 5: 키웍스 -->
+        <div class="career-item career-industry pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-slate-200 text-darkPop border border-darkPop shadow-pop-sm">
+                  머신비전사업부
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200">
+                  비전 SW 실무
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">키웍스 (Keyworks)</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="scan" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-slate-700 mb-1">
+            Machine Vision Software Engineer
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            산업용 머신비전 검사 소프트웨어 개발, 영상 처리 알고리즘 최적화 및 스마트 팩토리 설비 연동
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">머신비전 검사 SW</span>
+            <span class="px-2 py-0.5 bg-cyan-100 rounded-md border border-darkPop">영상 처리 알고리즘</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded-md border border-darkPop">스마트 팩토리</span>
+          </div>
+        </div>
+
+        <!-- ==================== 2. 교육 및 강의 경력 ==================== -->
+
+        <!-- Education 1: 패스트캠퍼스 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-coral text-white border border-darkPop shadow-pop-sm">
+                  온라인 본강의
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  패스트캠퍼스
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">패스트캠퍼스 (FastCampus)</h3>
+            </div>
+            <a href="https://fastcampus.co.kr/event_online_digitaltwin" target="_blank" class="p-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            Physical AI 로봇 개발을 위한 디지털 트윈 구축 (w. NVIDIA Omniverse)
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            NVIDIA Omniverse 기반 피지컬 AI 로봇 환경 구성 및 산업 디지털 트윈 파이프라인 온라인 강의
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Physical AI</span>
+            <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">디지털 트윈</span>
+          </div>
+        </div>
+
+        <!-- Education 2: 한국가상융합디지털산업협회 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-sunshine text-darkPop border border-darkPop shadow-pop-sm">
+                  재직자 특화
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  판교 캠퍼스
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">한국가상융합디지털산업협회</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            생성형 AI를 활용한 산업 디지털 트윈 XR 시뮬레이션 제작 과정
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            판교 가상융합기술 캠퍼스 재직자 대상 생성형 AI 접목 산업 시뮬레이션 및 XR 인터랙션 실습 지도
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-indigo-100 rounded-md border border-darkPop">판교 허브</span>
+            <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">생성형 AI</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">XR 시뮬레이션</span>
+          </div>
+        </div>
+
+        <!-- Education 3: 코드랩아카데미 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-lavender text-darkPop border border-darkPop shadow-pop-sm">
+                  KDT 전담 강사
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-50 text-pink-700 border border-pink-200">
+                  취업률 85% · 평점 4.6
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">코드랩아카데미 (CodeLab Academy)</h3>
+            </div>
+            <a href="https://www.linkedin.com/in/henry-s-8a1b7b152/" target="_blank" class="p-1 rounded-lg border border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            로보틱스 설계를 통한 스마트제조 가상공장 구현
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            PLC(MELSEC) 및 협동로봇 연동 스마트제조 가상공장 구축 전담 강의 및 최종 프로젝트 멘토링
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">MELSEC PLC</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Universal Robots</span>
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">가상공장 구축</span>
+          </div>
+        </div>
+
+        <!-- Education 4: 경기인력개발원 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-darkPop shadow-pop-sm">
+                  KDT 출강
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  Unity 부트캠프
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">경기인력개발원</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            Unity 기초부터 C# 스크립팅, 실무형 3D 시뮬레이션 제작
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            Unity 엔진 핵심 코어, 3D 물리 인터랙션 구현 및 실무형 시뮬레이션 제작 실습 출강
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Unity 3D Engine</span>
+            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">C# Scripting</span>
+            <span class="px-2 py-0.5 bg-slate-100 rounded-md border border-darkPop">3D 시뮬레이션</span>
+          </div>
+        </div>
+
+        <!-- Education 5: 한국콘텐츠진흥원 뉴콘텐츠아카데미 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-violet-100 text-violet-900 border border-darkPop shadow-pop-sm">
+                  NCA 1기 출강
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  KOCCA
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">한국콘텐츠진흥원 뉴콘텐츠아카데미</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            NCA 1기 Unity 기반 XR 실감형 시뮬레이션 과정
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            미래 융복합 콘텐츠 창작자 대상 XR(VR/AR/MR) 인터랙티브 콘텐츠 제작 기법 및 실감형 시뮬레이션 실습
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">XR(VR/AR/MR)</span>
+            <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">실감형 콘텐츠</span>
+            <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">인터랙션 기법</span>
+          </div>
+        </div>
+
+        <!-- Education 6: 에티버스 러닝 -->
+        <div class="career-item career-education pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl p-3.5 relative">
+          <div class="flex items-start justify-between gap-2 mb-1">
+            <div>
+              <div class="flex items-center gap-1.5 mb-0.5">
+                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-darkPop shadow-pop-sm">
+                  KDT 전담 강사
+                </span>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  에티버스 러닝
+                </span>
+              </div>
+              <h3 class="text-sm font-extrabold text-darkPop">에티버스 러닝 (ETIVERS Learning)</h3>
+            </div>
+            <span class="p-1 rounded-lg border border-darkPop bg-slate-50 text-slate-400">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+          <p class="text-xs font-bold text-bubble mb-1">
+            유니티 부트캠프 심화 및 포트폴리오 코칭
+          </p>
+          <p class="text-xs text-slate-600 leading-relaxed mb-2">
+            Unity 3D 엔진 기본·심화 과정 전담 강의 및 실무 프로젝트 포트폴리오 완성 팀 코칭
+          </p>
+          <div class="flex flex-wrap gap-1 text-[10px] font-bold">
+            <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">Unity 심화</span>
+            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">프로젝트 코칭</span>
+            <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">포트폴리오 완성</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
 
-    <!-- TAB 3: Highlighted Portfolio Projects -->
-    <div id="tab-projects" class="tab-content hidden space-y-3.5">
+    <!-- TAB 3: Insights (연재 에세이 & 아티클) -->
+    <div id="tab-insights" class="tab-content hidden space-y-3.5">
 
-      <!-- Project 1: NVIDIA Conference 2023 -->
-      <a href="https://youtu.be/WrpE6T8RTzY" target="_blank" rel="noopener noreferrer" 
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-900 overflow-hidden">
-          <img src="https://img.youtube.com/vi/WrpE6T8RTzY/hqdefault.jpg" alt="NVIDIA PLM Conference 2023" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
-              ▶
-            </span>
+      <!-- Insights Header Banner -->
+      <div class="bg-gradient-to-br from-white via-creamy to-sunshine/20 border-2 border-darkPop shadow-pop rounded-2xl p-4">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-1.5">
+            <span class="text-base">💡</span>
+            <h2 class="text-xs font-black text-darkPop uppercase tracking-wider font-mono">TECH & AI INSIGHTS</h2>
           </div>
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-sunshine border-2 border-darkPop rounded-full text-[10px] font-extrabold text-darkPop shadow-pop-sm">
-            SPEAKER / TALK
+          <span class="text-[10px] font-black px-2 py-0.5 rounded-full bg-sunshine border border-darkPop text-darkPop shadow-pop-sm">
+            연재 에세이
           </span>
         </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
-            <span>NVIDIA PLM Conference 2023</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </h3>
-          <p class="text-xs text-slate-600 mt-1">
-            NVIDIA Omniverse 기반 개방형 디지털 트윈 구축 전략 발표 세션
-          </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-slate-100 rounded-md border border-darkPop">NVIDIA Omniverse</span>
-            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Digital Twin</span>
-            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">Industrial AI</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Project 2: ADD Synthetic Data Simulator -->
-      <div class="pop-card bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-800 overflow-hidden">
-          <img src="assets/add-synthetic-sim.png" alt="AI 합성 데이터 생성 시뮬레이터" class="w-full h-full object-cover" onerror="this.src='https://img.youtube.com/vi/WrpE6T8RTzY/hqdefault.jpg'">
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-mint text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
-            GOV & DEFENSE R&D
-          </span>
-        </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop">AI 합성 데이터 생성 시뮬레이터</h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Unity HDRP 기반 초실사 합성 데이터 파이프라인 · Naver LABs, 국방과학연구소(ADD) 협업 · LiDAR, IR, Segmentation 다중 센서 시뮬레이션
-          </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Unity HDRP</span>
-            <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">OpenCV</span>
-            <span class="px-2 py-0.5 bg-purple-100 rounded-md border border-darkPop">LiDAR / IR Sim</span>
-          </div>
-        </div>
+        <p class="text-xs text-slate-700 leading-relaxed font-medium">
+          Physical AI 엔지니어의 시각으로 기술의 급격한 진보, 인류의 미래, 그리고 사회적 함의를 깊이 있게 기록합니다.
+        </p>
       </div>
 
-      <!-- Project 3: Spody Interactive XR -->
-      <a href="https://www.youtube.com/watch?v=Exp1zakQkhQ" target="_blank" rel="noopener noreferrer"
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-900 overflow-hidden">
-          <img src="assets/edutech-game.jpg" alt="스포디 XR 교육게임" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://img.youtube.com/vi/Exp1zakQkhQ/hqdefault.jpg'">
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
-              ▶
+      <!-- Essay Article Card 01 -->
+      <article class="bg-white border-2 border-darkPop shadow-pop-lg rounded-2xl p-4 space-y-3.5">
+        
+        <!-- Article Meta & Collapse Toggle Button -->
+        <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-coral text-white border border-darkPop shadow-pop-sm">
+              ESSAY #01
+            </span>
+            <span class="text-[10px] font-bold text-slate-500 font-mono">
+              AI Philosophy · 사회와 미래
             </span>
           </div>
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-popPink text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
-            130+ 학교 구독 서비스
-          </span>
+          
+          <!-- Accordion Toggle Button -->
+          <button onclick="toggleEssay('01')" id="btn-toggle-01" class="px-2.5 py-1 rounded-lg border-2 border-darkPop bg-slate-100 hover:bg-slate-200 text-darkPop text-[11px] font-extrabold flex items-center gap-1 shadow-pop-sm active:translate-y-0.5 transition-all">
+            <span id="txt-toggle-01">본문 접기</span>
+            <i data-lucide="chevron-up" id="icon-toggle-01" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+          </button>
         </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
-            <span>스포디(Spody) — 구독형 확장현실 교육게임</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </h3>
-          <p class="text-xs text-slate-600 mt-1">
-            스포츠와 교육을 융합한 인터랙티브 XR 서비스 · Kinect/LiDAR 기반 실시간 모션 인식 및 20종 통합 발달 콘텐츠
-          </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-pink-100 rounded-md border border-darkPop">Interactive XR</span>
-            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">LiDAR / Kinect</span>
-            <span class="px-2 py-0.5 bg-sky-100 rounded-md border border-darkPop">Unity 3D</span>
-          </div>
-        </div>
-      </a>
 
-      <!-- Project 4: Robotics Reinforcement Learning (Spot & UR16e) -->
-      <a href="https://www.youtube.com/watch?v=4YsCz5fFfj0" target="_blank" rel="noopener noreferrer"
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-900 overflow-hidden">
-          <img src="https://img.youtube.com/vi/4YsCz5fFfj0/hqdefault.jpg" alt="Spot RL Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
-              ▶
-            </span>
-          </div>
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-bubble text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
-            ROBOT LEARNING & RL
-          </span>
-        </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
-            <span>Boston Dynamics Spot & UR16e 강화학습</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        <!-- Title -->
+        <div>
+          <h3 class="text-base font-black text-darkPop leading-snug mb-1">
+            Impact of AI on Society’s Future
           </h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Boston Dynamics Spot의 PPO 기반 단계적 커리큘럼 러닝 및 6축 산업용 매니퓰레이터 UR16e 제어 훈련
+          <p class="text-xs font-bold text-bubble">
+            법륜스님의 강연 통찰: AI 급변기, 우리는 무엇을 준비하고 어떻게 바라보아야 하는가?
           </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-violet-100 rounded-md border border-darkPop">PPO Algorithm</span>
-            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">ML-Agents</span>
-            <span class="px-2 py-0.5 bg-amber-100 rounded-md border border-darkPop">Robot Kinematics</span>
-          </div>
         </div>
-      </a>
 
-      <!-- Project 5: Unity-MELSEC PLC & Universal Robots Digital Twin -->
-      <a href="https://www.youtube.com/watch?v=Z7nRL82oNe8" target="_blank" rel="noopener noreferrer"
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-900 overflow-hidden">
-          <img src="https://img.youtube.com/vi/Z7nRL82oNe8/hqdefault.jpg" alt="Unity MELSEC PLC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
-              ▶
+        <!-- YouTube Video Player Container (인라인 재생 & 유튜브 새창 열기 완벽 지원) -->
+        <div class="rounded-2xl overflow-hidden border-2 border-darkPop shadow-pop-sm bg-slate-900" id="videoBox-01">
+          <!-- Thumbnail & Play Overlay -->
+          <div class="relative h-44 bg-slate-800 overflow-hidden cursor-pointer group" onclick="startYoutubePlayer('01', '_KxFhe0Q6PA')">
+            <img src="https://img.youtube.com/vi/_KxFhe0Q6PA/hqdefault.jpg" 
+                 alt="Impact of AI on Society's Future - 법륜스님" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
+                ▶
+              </span>
+            </div>
+            <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-red-600 text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
+              YouTube 원본 강연
             </span>
           </div>
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-mint text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
-            FACTORY DIGITAL TWIN
-          </span>
-        </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
-            <span>Unity-MELSEC PLC 실시간 가상공장 연동</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </h3>
-          <p class="text-xs text-slate-600 mt-1">
-            Mitsubishi(MELSEC) PLC와 Unity 3D 가상 설비 실시간 동기화, Realtime DB 연동 및 협동로봇 티칭 시뮬레이터
-          </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-blue-100 rounded-md border border-darkPop">MELSEC PLC</span>
-            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Unity Digital Twin</span>
-            <span class="px-2 py-0.5 bg-orange-100 rounded-md border border-darkPop">MQTT / TCP-IP</span>
-          </div>
-        </div>
-      </a>
 
-      <!-- Project 6: Hardware Making (Kinetic Clock & Biped Robot) -->
-      <a href="https://www.instagram.com/p/DUTRhLsCVmj/" target="_blank" rel="noopener noreferrer"
-         class="pop-card block bg-white border-2 border-darkPop shadow-pop rounded-2xl overflow-hidden group">
-        <div class="relative h-36 bg-slate-900 overflow-hidden">
-          <img src="image&video/kineticClock.png" alt="Kinetic Clock" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <span class="w-10 h-10 rounded-full bg-sunshine border-2 border-darkPop flex items-center justify-center text-darkPop font-bold shadow-pop-sm group-hover:scale-110 transition-transform">
-              ▶
-            </span>
+          <!-- Video Controls Action Bar -->
+          <div class="p-2.5 bg-white border-t-2 border-darkPop flex items-center justify-between gap-2 text-xs font-bold">
+            <button onclick="startYoutubePlayer('01', '_KxFhe0Q6PA')" class="text-darkPop hover:text-bubble flex items-center gap-1.5 truncate text-left">
+              <i data-lucide="play-circle" class="w-4 h-4 text-coral flex-shrink-0"></i>
+              <span class="truncate">여기서 바로 영상 재생하기</span>
+            </button>
+            <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA" target="_blank" rel="noopener noreferrer" 
+               onclick="window.open('https://www.youtube.com/watch?v=_KxFhe0Q6PA', '_blank')"
+               class="px-2.5 py-1 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 border border-red-300 text-[11px] font-black flex items-center gap-1 flex-shrink-0 shadow-pop-sm active:translate-y-0.5 transition-all" 
+               title="YouTube 새 창/앱으로 이동">
+              <span>YouTube 열기</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
           </div>
-          <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-coral text-white border-2 border-darkPop rounded-full text-[10px] font-extrabold shadow-pop-sm">
-            HARDWARE & 3D PRINTING
-          </span>
         </div>
-        <div class="p-3.5">
-          <h3 class="text-sm font-extrabold text-darkPop group-hover:text-bubble transition-colors flex items-center justify-between">
-            <span>키네틱 7-세그먼트 시계 & 2족 보행 로봇</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </h3>
-          <p class="text-xs text-slate-600 mt-1">
-            3D 프린팅 자체 기구 설계(Fusion 360), Arduino Mega와 30개 SG90 서보 제어 및 디지털 버스 서보 2족 보행 로봇 개발
+
+        <!-- Collapsible Content Body Container -->
+        <div id="essay-body-01" class="space-y-3 pt-1 text-xs leading-relaxed text-slate-700 transition-all duration-300">
+
+          <!-- Section 1 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="font-extrabold text-darkPop flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-md bg-yellow-200 border border-darkPop text-center leading-4 font-mono text-[11px]">1</span>
+                <span>질문자의 고민</span>
+              </h4>
+              <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=22" target="_blank" class="text-[10px] font-mono font-bold text-bubble hover:underline flex items-center gap-0.5">
+                <i data-lucide="play-circle" class="w-3 h-3"></i> [00:22]
+              </a>
+            </div>
+            <p class="text-slate-600 text-[11px] leading-relaxed">
+              IT 업계에 종사하는 질문자는 AI 기술로 인해 직업과 사회 전반에 급격한 변화가 일어나고, 구글 핵심 인사가 사임할 정도로 큰 사회적 위험이 예견됨에도 사회적 공론화 없이 기술이 일방적으로 수용되는 현실에 대해 <b>"우리가 무엇을 해야 하며, 이 기술을 어떻게 바라보아야 하는가?"</b>라고 질문했습니다.
+            </p>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="font-extrabold text-darkPop flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-md bg-blue-200 border border-darkPop text-center leading-4 font-mono text-[11px]">2</span>
+                <span>역사적 관점에서 본 기술 혁신과 양면성</span>
+              </h4>
+              <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=95" target="_blank" class="text-[10px] font-mono font-bold text-bubble hover:underline flex items-center gap-0.5">
+                <i data-lucide="play-circle" class="w-3 h-3"></i> [01:35]
+              </a>
+            </div>
+            <div class="space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
+              <p>
+                • <b>거대한 변화의 한 궤적</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=133" target="_blank" class="text-bubble font-mono font-bold">[02:13]</a>: 지구 역사와 인류 문명을 돌아보면 기술의 발전으로 격변을 겪은 적이 무수히 많았으며, AI 역시 문명사적 대전환의 한 과정입니다.
+              </p>
+              <p>
+                • <b>산업혁명의 교훈</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=184" target="_blank" class="text-bubble font-mono font-bold">[03:04]</a>: 기계와 동력의 도입은 물질 생산(GDP) 측면에서는 비약적 도약이었으나, 환경 파괴와 기후위기의 시작이기도 했습니다. AI 또한 단순한 흑백논리를 넘어 <b>'편리성'과 '잠재적 위험성'을 동시에 균형 있게 응시</b>해야 합니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="font-extrabold text-darkPop flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-md bg-rose-200 border border-darkPop text-center leading-4 font-mono text-[11px]">3</span>
+                <span>무지에서 비롯되는 '방치'와 '과잉 반응'</span>
+              </h4>
+              <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=508" target="_blank" class="text-[10px] font-mono font-bold text-bubble hover:underline flex items-center gap-0.5">
+                <i data-lucide="play-circle" class="w-3 h-3"></i> [08:28]
+              </a>
+            </div>
+            <div class="space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
+              <p>
+                • <b>코로나19의 거울</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=523" target="_blank" class="text-bubble font-mono font-bold">[08:43]</a>: 미지의 현상을 잘 모를 때는 초기에 무방비로 방치하다가, 확산되면 극도로 두려워하며 과잉 반응을 보입니다. 그러나 현상을 명확히 이해하면 차분한 대응이 가능해집니다.
+              </p>
+              <p>
+                • <b>합리적 태도</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=635" target="_blank" class="text-bubble font-mono font-bold">[10:35]</a>: AI에 대해서도 무관심하게 방치하거나 막연한 공포에 사로잡히기보다, <b>신중하고 이성적인 예측을 토대로 차분히 사회적 대비</b>를 해나가야 합니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="font-extrabold text-darkPop flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-md bg-purple-200 border border-darkPop text-center leading-4 font-mono text-[11px]">4</span>
+                <span>AI와 빅데이터를 통한 인간 통제·조작 위험</span>
+              </h4>
+              <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=767" target="_blank" class="text-[10px] font-mono font-bold text-bubble hover:underline flex items-center gap-0.5">
+                <i data-lucide="play-circle" class="w-3 h-3"></i> [12:47]
+              </a>
+            </div>
+            <div class="space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
+              <p>
+                • <b>권력 집중과 감시</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=778" target="_blank" class="text-bubble font-mono font-bold">[12:58]</a>: 첨단 AI와 방대한 빅데이터가 소수 거대 권력에 집중될 경우, 대중을 감시하고 여론을 유도하기가 매우 쉬워집니다.
+              </p>
+              <p>
+                • <b>카르마(습관)와 알고리즘 자극</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=906" target="_blank" class="text-bubble font-mono font-bold">[15:06]</a>, <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=992" target="_blank" class="text-bubble font-mono font-bold">[16:32]</a>: 인간은 숙고하기 전 무의식적으로 반응하는 자동화된 사고·행동 패턴(카르마)을 지닙니다. AI 분석을 통한 정밀 맞춤형 정보와 자극은 인간의 욕망과 신념을 손쉽게 조작할 수 있는 심각한 위협이 됩니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between mb-1.5">
+              <h4 class="font-extrabold text-darkPop flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-md bg-emerald-200 border border-darkPop text-center leading-4 font-mono text-[11px]">5</span>
+                <span>결론 및 제언: 지혜로운 사회적 합의</span>
+              </h4>
+              <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=1322" target="_blank" class="text-[10px] font-mono font-bold text-bubble hover:underline flex items-center gap-0.5">
+                <i data-lucide="play-circle" class="w-3 h-3"></i> [22:02]
+              </a>
+            </div>
+            <div class="space-y-1.5 text-slate-600 text-[11px] leading-relaxed">
+              <p>
+                • <b>제도적 안전장치</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=1347" target="_blank" class="text-bubble font-mono font-bold">[22:27]</a>: 경제적 이익과 기술적 효용에 매몰되지 않고, 잠재된 파괴력을 통제할 수 있는 윤리적 지혜와 제도적 가드레일을 선제적으로 설계해야 합니다.
+              </p>
+              <p>
+                • <b>핵심 메시지</b> <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA&t=1459" target="_blank" class="text-bubble font-mono font-bold">[24:19]</a>: 기후위기처럼 돌이킬 수 없는 지경에 이르러 뒤늦게 대응하지 않도록, AI를 맹목적으로 두려워하지도 말되 <b>모두가 함께 눈을 뜨고 지혜롭게 공론화하여 대비</b>해야 합니다.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Engineer's Reflection Note -->
+        <div class="p-3 rounded-xl bg-sunshine/25 border border-darkPop">
+          <div class="flex items-center gap-1.5 mb-1 text-darkPop font-extrabold text-xs">
+            <span>✍️</span>
+            <span>Henry's Note: 엔지니어로서의 고찰</span>
+          </div>
+          <p class="text-[11px] text-slate-700 leading-relaxed font-medium">
+            Physical AI와 가상 시뮬레이션을 연구하는 엔지니어로서, 기술의 속도에 취하기보다 기술이 인간성을 훼손하지 않는 안전한 가드레일을 함께 고민하는 것이 기술자의 진정한 소명임을 깨닫게 하는 깊은 울림의 강연이었습니다.
           </p>
-          <div class="mt-2.5 flex flex-wrap gap-1 text-[10px] font-bold">
-            <span class="px-2 py-0.5 bg-rose-100 rounded-md border border-darkPop">3D Printing</span>
-            <span class="px-2 py-0.5 bg-emerald-100 rounded-md border border-darkPop">Embedded MCU</span>
-            <span class="px-2 py-0.5 bg-yellow-100 rounded-md border border-darkPop">Fusion 360</span>
-          </div>
         </div>
-      </a>
+
+          <!-- Bottom Quick Collapse Button -->
+          <div class="pt-1 text-center">
+            <button onclick="toggleEssay('01')" class="w-full py-2 rounded-xl border-2 border-darkPop bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-black shadow-pop-sm flex items-center justify-center gap-1.5 transition-all active:translate-y-0.5">
+              <span>내용 간략히 접기</span>
+              <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+        </div> <!-- /#essay-body-01 -->
+
+        <!-- Share & Link Out -->
+        <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+          <span class="text-[10px] text-slate-400 font-mono">Published by Henry Shin</span>
+          <a href="https://www.youtube.com/watch?v=_KxFhe0Q6PA" target="_blank" rel="noopener noreferrer" 
+             onclick="window.open('https://www.youtube.com/watch?v=_KxFhe0Q6PA', '_blank')"
+             class="font-bold text-darkPop hover:text-bubble flex items-center gap-1 text-[11px]">
+            <span>YouTube 전체 영상</span>
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+        </div>
+
+      </article>
+
+      <!-- Next Article Coming Soon Teaser -->
+      <div class="p-3 rounded-2xl border-2 border-dashed border-darkPop/40 bg-white/60 text-center">
+        <span class="text-xs font-bold text-slate-500 block mb-0.5">
+          🔜 다음 연재 예고
+        </span>
+        <p class="text-[11px] text-slate-600 font-medium">
+          Physical AI 시대, 산업용 로봇과 제조 현장 일자리의 패러다임 변화 (작성 중)
+        </p>
+      </div>
 
     </div>
 
@@ -825,6 +1236,90 @@
         activeBtn.classList.add('bg-darkPop', 'text-white', 'shadow-pop-sm');
         activeBtn.classList.remove('text-slate-600');
       }
+      lucide.createIcons();
+    }
+
+    // Essay Accordion Collapse / Expand Toggle
+    function toggleEssay(id) {
+      const body = document.getElementById(`essay-body-${id}`);
+      const btnTxt = document.getElementById(`txt-toggle-${id}`);
+      const btnIcon = document.getElementById(`icon-toggle-${id}`);
+      
+      if (!body) return;
+      
+      const isHidden = body.classList.contains('hidden');
+      if (isHidden) {
+        body.classList.remove('hidden');
+        if (btnTxt) btnTxt.innerText = '본문 접기';
+        if (btnIcon) btnIcon.classList.remove('rotate-180');
+      } else {
+        body.classList.add('hidden');
+        if (btnTxt) btnTxt.innerText = '본문 펼치기 (5가지 핵심 통찰)';
+        if (btnIcon) btnIcon.classList.add('rotate-180');
+      }
+      lucide.createIcons();
+    }
+
+    // Inline YouTube Player Launcher
+    function startYoutubePlayer(id, videoId) {
+      const container = document.getElementById(`videoBox-${id}`);
+      if (!container) return;
+      
+      container.innerHTML = `
+        <div class="relative w-full pb-[56.25%] h-0 bg-black">
+          <iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            class="absolute top-0 left-0 w-full h-full border-0">
+          </iframe>
+        </div>
+        <div class="p-2 bg-white border-t-2 border-darkPop flex items-center justify-between text-xs font-bold">
+          <span class="text-slate-600 text-[11px]">🎬 영상이 재생 중입니다</span>
+          <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener noreferrer" 
+             onclick="window.open('https://www.youtube.com/watch?v=${videoId}', '_blank')"
+             class="px-2 py-0.5 rounded bg-red-50 text-red-700 border border-red-300 text-[11px] font-bold flex items-center gap-1 hover:bg-red-100">
+            <span>YouTube 앱으로 열기</span>
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    // Career Sub-filtering Logic (All, Industry, Education)
+    function filterCareer(category) {
+      document.querySelectorAll('.career-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-darkPop', 'text-white', 'shadow-pop-sm');
+        btn.classList.add('text-slate-600');
+      });
+
+      const activeBtn = document.getElementById(`filter-btn-${category}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-darkPop', 'text-white', 'shadow-pop-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+
+      const items = document.querySelectorAll('.career-item');
+      items.forEach(item => {
+        if (category === 'all') {
+          item.classList.remove('hidden');
+        } else if (category === 'industry') {
+          if (item.classList.contains('career-industry')) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        } else if (category === 'education') {
+          if (item.classList.contains('career-education')) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        }
+      });
       lucide.createIcons();
     }
 
